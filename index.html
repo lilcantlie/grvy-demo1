@@ -27,7 +27,7 @@
 
 .incoming-toast{position:absolute;z-index:30;top:10px;left:12px;right:12px;display:flex;gap:11px;align-items:flex-start;padding:12px 14px;border-radius:22px;background:rgba(111,119,132,.97);color:#fff;box-shadow:0 8px 28px #0003;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transform:translateY(-150%);opacity:0;transition:transform .38s cubic-bezier(.2,.8,.2,1),opacity .28s ease;cursor:pointer;font:14px -apple-system,BlinkMacSystemFont,sans-serif;text-align:left}.incoming-toast.show{transform:translateY(0);opacity:1}.incoming-toast.hide{transform:translateY(-150%);opacity:0}.incoming-icon{width:34px;height:34px;flex:0 0 34px;border-radius:10px;background:#35c759;display:grid;place-items:center;font-size:20px}.incoming-copy{min-width:0;flex:1}.incoming-head{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:650;margin:0 0 5px}.incoming-head small{font-size:11px;font-weight:400;color:#eee}.incoming-body{display:block;font-size:13px;line-height:1.35;text-align:left;overflow-wrap:anywhere}.incoming-copy,.incoming-head{ text-align:left }
 /* Fit the simulator to embedded browsers that overlay their own bottom controls. */
-@media (max-width: 600px){body.in-x-browser .device,body.in-x-browser .screen{height:var(--app-height, calc(100svh - 150px));}body.in-x-browser .screen{min-height:0}}
+@media (max-width: 600px){body.in-x-browser .device,body.in-x-browser .screen{height:var(--app-height, 100svh);}body.in-x-browser .screen{min-height:0}}
 </style></head><body><div class="wrap"><div class="device"><div class="screen"><div class="island"></div><div class="status"><span id="statusClock">--:--</span><span>▮▮▮　◉</span></div><div class="view" id="view"></div></div></div></div>
 <script>
 (function(){
@@ -36,8 +36,7 @@
   if(inX) document.body.classList.add('in-x-browser');
   function setAppHeight(){
     let h=(window.visualViewport&&window.visualViewport.height)||window.innerHeight||document.documentElement.clientHeight;
-    // X's in-app browser overlays its bottom toolbar and tweet action tray over the web view.
-    if(inX) h=Math.max(520,h-150);
+    // Use the actual visible webview height; subtracting extra space made the simulator too short.
     document.documentElement.style.setProperty('--app-height',h+'px');
   }
   setAppHeight();
