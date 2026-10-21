@@ -1,4 +1,4 @@
-// --- Global Realtime Clock ---
+// --- Realtime Clock ---
 function updateClock() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -8,18 +8,15 @@ function updateClock() {
     const optionsDate = { weekday: 'long', day: 'numeric', month: 'long' };
     const dateStr = now.toLocaleDateString('id-ID', optionsDate);
     
-    // Status Bar & Lockscreen
     document.getElementById('status-time').innerText = `${hours}:${minutes}`;
     document.getElementById('lock-time').innerText = `${hours}:${minutes}`;
     document.getElementById('lock-date').innerText = dateStr;
     
-    // Clock App
     const clockBigTime = document.getElementById('clock-big-time');
     const clockBigDate = document.getElementById('clock-big-date');
     if (clockBigTime) clockBigTime.innerText = `${hours}:${minutes}:${seconds}`;
     if (clockBigDate) clockBigDate.innerText = `${dateStr} ${now.getFullYear()}`;
     
-    // Widget Calendar Date
     const widgetDay = document.getElementById('widget-day');
     if (widgetDay) widgetDay.innerText = now.getDate();
 }
@@ -27,14 +24,13 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// --- Lockscreen Swipe to Passcode ---
+// --- Lockscreen & Passcode (7777) ---
 const swipeBtn = document.getElementById('swipe-up-btn');
 swipeBtn.addEventListener('click', () => {
     document.getElementById('lockscreen').classList.remove('active');
     document.getElementById('passcode-screen').classList.add('active');
 });
 
-// --- Passcode System (PIN: 7777) ---
 let enteredPin = "";
 const targetPin = "7777";
 const keys = document.querySelectorAll('.key');
@@ -54,7 +50,7 @@ keys.forEach(key => {
                     document.getElementById('passcode-screen').classList.remove('active');
                     document.getElementById('homescreen').classList.add('active');
                 } else {
-                    alert('Passcode salah! Gunakan: 7777');
+                    alert('Passcode salah! Gunakan PIN: 7777');
                 }
                 enteredPin = "";
                 updateDots();
@@ -73,20 +69,16 @@ function updateDots() {
     });
 }
 
-// --- App Navigation System ---
+// --- App Modal Management ---
 function openApp(appName) {
-    if (appName === 'dummy') return; // Logo estetika aja
+    if (appName === 'dummy') return;
     
     const appContainer = document.getElementById('app-container');
-    const appHeaderTitle = document.getElementById('app-header-title');
-    
-    // Hide all app views
     document.querySelectorAll('.app-content').forEach(el => el.classList.remove('active'));
     
     const targetApp = document.getElementById(`app-${appName}`);
     if (targetApp) {
         targetApp.classList.add('active');
-        appHeaderTitle.innerText = appName.toUpperCase();
         appContainer.classList.add('active');
     }
 }
@@ -95,7 +87,11 @@ function closeApp() {
     document.getElementById('app-container').classList.remove('active');
 }
 
-// --- Telegram Chat Database ---
+function showIgPostModal(caption) {
+    alert(`Instagram Post:\n"${caption}"`);
+}
+
+// --- Telegram Chat Database & Detail Screen ---
 const tgChatData = {
     baby: [
         { sender: 'baby', text: 'abang gak kangen akuuu 😞😞' },
@@ -217,9 +213,11 @@ function openTgChat(chatKey) {
     const listScreen = document.getElementById('telegram-list-screen');
     const detailScreen = document.getElementById('telegram-detail-screen');
     const chatTitle = document.getElementById('tg-chat-title');
+    const headerAvatar = document.getElementById('tg-header-avatar-letter');
     const msgBox = document.getElementById('tg-chat-messages');
 
     chatTitle.innerText = chatKey.toUpperCase();
+    headerAvatar.innerText = chatKey.charAt(0).toUpperCase();
     msgBox.innerHTML = '';
 
     const messages = tgChatData[chatKey] || [];
@@ -245,7 +243,7 @@ function closeTgChat() {
     document.getElementById('telegram-detail-screen').classList.add('hidden');
 }
 
-// --- Spotify Player Embedded Switch ---
+// --- Spotify Player ---
 function loadSpotifyTrack(trackId) {
     const iframe = document.getElementById('spotify-iframe');
     iframe.src = `https://open.spotify.com/embed/track/${trackId}`;
