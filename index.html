@@ -66,17 +66,12 @@ button{color:inherit;cursor:pointer}
 .note{width:100%;background:#1e1e1e;border:1px solid #303030;border-radius:13px;padding:14px;text-align:left;margin-bottom:8px}
 .note b{display:block;margin-bottom:6px}.note small{color:#aaa;line-height:1.5}
 .editor{width:100%;min-height:230px;background:#171717;color:white;border:1px solid #333;border-radius:12px;padding:13px;resize:vertical;line-height:1.5}
-.profile{text-align:center;padding:18px 0}
-.profile img{width:90px;height:90px;object-fit:cover;border-radius:50%}
+.profile{text-align:center;padding:18px 0}.profile img{width:90px;height:90px;object-fit:cover;border-radius:50%}
 .postimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin-top:10px}
-.posttop{display:flex;align-items:center;gap:10px}
-.posttop .avatar{width:34px;height:34px}
-.actionrow{display:flex;gap:17px;margin-top:12px}
-.actionrow button{background:none;border:0;padding:4px 0;font-size:12px}
+.posttop{display:flex;align-items:center;gap:10px}.posttop .avatar{width:34px;height:34px}
+.actionrow{display:flex;gap:17px;margin-top:12px}.actionrow button{background:none;border:0;padding:4px 0;font-size:12px}
 .rowitem{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid #292929;font-size:13px}
-.rowitem span:last-child{color:#aaa}
-.rowitem b{overflow-wrap:anywhere}
-.bigtime{font-size:54px;font-weight:250;text-align:center;margin:30px 0}
+.rowitem span:last-child{color:#aaa}.rowitem b{overflow-wrap:anywhere}
 .toast{position:absolute;z-index:60;top:57px;left:13px;right:13px;padding:13px;background:#292929ed;border:1px solid #ffffff20;border-radius:15px;text-align:left;font-size:12px;line-height:1.5;box-shadow:0 6px 30px #0008;backdrop-filter:blur(20px);overflow-wrap:anywhere}
 .toast strong{display:block;margin-bottom:3px}
 @media(min-width:500px){body{padding:15px 0}.phone{height:min(900px,calc(100dvh - 30px));border:5px solid #292929;border-radius:40px}.screen{border-radius:34px}}
@@ -87,53 +82,40 @@ button{color:inherit;cursor:pointer}
 <div class="wallpaper"></div>
 <div class="status"><span id="clock">03:00</span><span>▮▮▮ ◉</span></div>
 <div class="island"></div>
-
 <section class="lock" id="lock">
-  <div class="lockdate" id="lockdate"></div>
-  <div class="locktime" id="locktime">03:00</div>
-  <div class="locktitle">3:00 AM, LIFE OF ME</div>
-  <div class="notifications" id="notifications">
-    <div class="notification"><b>Messages · now</b>Baby: abang, you're still awake?</div>
-    <div class="notification"><b>WhatsApp · 2m ago</b>Dreamies 💤: who is still online 💀</div>
-  </div>
-  <div class="unlockhint">⌃<br>Swipe up or tap to unlock</div>
+<div class="lockdate" id="lockdate"></div>
+<div class="locktime" id="locktime">03:00</div>
+<div class="locktitle">3:00 AM, LIFE OF ME</div>
+<div class="notifications" id="notifications">
+<div class="notification"><b>Messages · now</b>Baby: abang, you're still awake?</div>
+<div class="notification"><b>WhatsApp · 2m ago</b>Dreamies 💤: who is still online 💀</div>
+</div>
+<div class="unlockhint">⌃<br>Swipe up or tap to unlock</div>
 </section>
-
 <section class="lockpass hidden" id="pass">
-  <div class="eyebrow">3:00 AM, LIFE OF ME</div>
-  <h2>Enter Passcode</h2>
-  <div class="dots" id="dots">○ ○ ○ ○</div>
-  <div class="keypad" id="keypad"></div>
-  <button class="smallbtn" onclick="showLock()" style="margin-top:23px">Cancel</button>
+<div class="eyebrow">3:00 AM, LIFE OF ME</div><h2>Enter Passcode</h2>
+<div class="dots" id="dots">○ ○ ○ ○</div><div class="keypad" id="keypad"></div>
+<button class="smallbtn" onclick="showLock()" style="margin-top:23px">Cancel</button>
 </section>
-
 <section class="page hidden homebg" id="home">
-  <div class="eyebrow">YOUR WEDNESDAY · AFTER HOURS</div>
-  <div class="widget">
-    <div class="eyebrow">LIFE LATELY</div>
-    <h2>Still awake, huh?</h2>
-    <p>Gravy Remiez · 27</p>
-    <p>Master's student. IT support. Professional overthinker.</p>
-    <p style="margin-top:12px">♡ 8 years with Baby</p>
-  </div>
-  <div class="appgrid" id="apps"></div>
+<div class="eyebrow">YOUR WEDNESDAY · AFTER HOURS</div>
+<div class="widget"><div class="eyebrow">LIFE LATELY</div><h2>Still awake, huh?</h2>
+<p>Gravy Remiez · 27</p><p>Master's student. IT support. Professional overthinker.</p>
+<p style="margin-top:12px">♡ 8 years with Baby</p></div>
+<div class="appgrid" id="apps"></div>
 </section>
-
 <section class="page hidden" id="appview"></section>
-
 <div class="dock hidden" id="dock">
-  <button onclick="openApp('Messages')" aria-label="Messages">▣</button>
-  <button onclick="openApp('Phone')" aria-label="Phone">☎</button>
-  <button onclick="openApp('Photos')" aria-label="Photos">▧</button>
-  <button onclick="openApp('Music')" aria-label="Music">♫</button>
+<button onclick="openApp('Messages')" aria-label="Messages">▣</button>
+<button onclick="openApp('Phone')" aria-label="Phone">☎</button>
+<button onclick="openApp('Photos')" aria-label="Photos">▧</button>
+<button onclick="openApp('Music')" aria-label="Music">♫</button>
 </div>
 <div id="toast" class="toast hidden"></div>
 </div></div>
-
 <script>
 const $=id=>document.getElementById(id);
 const img=(id,w=500)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
-
 const photos=[
 ['Us, somewhere quiet','photo-1516589178581-6cd7833ae3b2'],
 ['Late afternoon','photo-1517841905240-472988babdf9'],
@@ -148,7 +130,6 @@ const photos=[
 ['Sunday drive','photo-1449824913935-59a10b8d2000'],
 ['One more memory','photo-1511988617509-a57c8a288659']
 ];
-
 const apps=[
 ['Messages','▣','blue'],['WhatsApp','◉','green'],['Phone','☎','green'],['Photos','▧','pink'],
 ['Notes','▤','orange'],['Passwords','🔑',''],['Social','◎','pink'],['Calendar','▦','red'],
@@ -157,26 +138,39 @@ const apps=[
 
 function loadSaved(key,fallback){
   try{
-    const value=localStorage.getItem(key);
-    return value===null?fallback:JSON.parse(value);
-  }catch(e){return fallback;}
+    const raw=localStorage.getItem(key);
+    if(raw===null)return fallback;
+    const value=JSON.parse(raw);
+    return value===null?fallback:value;
+  }catch(error){
+    console.error('Gagal membaca penyimpanan:',key,error);
+    return fallback;
+  }
 }
 function persist(key,value){
-  try{localStorage.setItem(key,JSON.stringify(value));return true;}
-  catch(e){toast('Browser tidak dapat menyimpan data.');return false;}
+  try{
+    const raw=JSON.stringify(value);
+    localStorage.setItem(key,raw);
+    if(localStorage.getItem(key)!==raw)throw new Error('Data tidak cocok setelah disimpan.');
+    return true;
+  }catch(error){
+    console.error('Gagal menyimpan:',key,error);
+    toast('Penyimpanan gagal. Coba buka website di Chrome biasa.');
+    return false;
+  }
 }
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
-function escapeAttr(s){return escapeHtml(s);}
+function escapeAttr(s){return escapeHtml(s)}
 
 let currentChat='';
 let currentChatApp='Messages';
 let chatData=loadSaved('lifeOfMeChats',{});
 let savedNotes=loadSaved('lifeOfMeNotes',[
-  {title:'things i need to remember',body:'buy coffee\nfinish the assignment\ncall Baby when he gets home\nstop pretending i am not sleepy'},
-  {title:'unsent message',body:'sometimes i still get butterflies like we just started dating. eight years and you still do that to me. embarrassing, honestly.'},
-  {title:'to do',body:'□ submit project\n□ groceries\n□ reply to the group chat\n☑ tell Baby i love him'}
+{title:'things i need to remember',body:'buy coffee\nfinish the assignment\ncall Baby when he gets home\nstop pretending i am not sleepy'},
+{title:'unsent message',body:'sometimes i still get butterflies like we just started dating. eight years and you still do that to me. embarrassing, honestly.'},
+{title:'to do',body:'□ submit project\n□ groceries\n□ reply to the group chat\n☑ tell Baby i love him'}
 ]);
 let notificationHistory=loadSaved('lifeOfMeNotifications',[]);
 let liked=loadSaved('lifeOfMeLikes',{});
@@ -205,7 +199,6 @@ function toast(message,who=''){
   clearTimeout(notificationTimer);
   notificationTimer=setTimeout(()=>banner.classList.add('hidden'),3500);
 }
-
 function showPass(){
   $('lock').classList.add('hidden');
   $('pass').classList.remove('hidden');
@@ -217,12 +210,9 @@ function showLock(){
   updateDots();
 }
 let startY=0;
-$('lock').addEventListener('touchstart',e=>{startY=e.touches[0].clientY;},{passive:true});
-$('lock').addEventListener('touchend',e=>{
-  if(startY-e.changedTouches[0].clientY>35)showPass();
-},{passive:true});
+$('lock').addEventListener('touchstart',e=>{startY=e.touches[0].clientY},{passive:true});
+$('lock').addEventListener('touchend',e=>{if(startY-e.changedTouches[0].clientY>35)showPass()},{passive:true});
 $('lock').addEventListener('click',showPass);
-
 function updateDots(){
   $('dots').textContent=Array.from({length:4},(_,i)=>i<pin.length?'●':'○').join(' ');
 }
@@ -244,22 +234,15 @@ function addKey(n){
     updateDots();
     if(pin.length===4){
       if(pin==='0606')unlock();
-      else{
-        pin='';
-        updateDots();
-        toast('Passcode incorrect. Try again.');
-      }
+      else{pin='';updateDots();toast('Passcode incorrect. Try again.')}
     }
   };
   $('keypad').appendChild(b);
 }
 for(let n=1;n<=9;n++)addKey(n);
-addKey('');
-addKey(0);
-addKey('⌫');
-
+addKey('');addKey(0);addKey('⌫');
 $('apps').innerHTML=apps.map(([n,g,c])=>
-  `<button class="appicon" onclick="openApp('${n}')"><div class="glyph ${c}">${g}</div><small>${n}</small></button>`
+`<button class="appicon" onclick="openApp('${n}')"><div class="glyph ${c}">${g}</div><small>${n}</small></button>`
 ).join('');
 
 function shell(title,body){
@@ -276,7 +259,6 @@ function goLock(){
   $('dock').classList.add('hidden');
   $('lock').classList.remove('hidden');
 }
-
 function defaultMessages(who){
   if(who==='Baby')return[
     {text:'abang, are you still awake?',me:false,time:'02:54'},
@@ -296,13 +278,11 @@ function defaultMessages(who){
     {text:'skill issue honestly',me:false,time:'02:32'}
   ];
 }
-
 function addNotification(who,message,appName){
   const item={who,message,appName,time:new Date().toISOString()};
   notificationHistory.unshift(item);
   notificationHistory=notificationHistory.slice(0,15);
   persist('lifeOfMeNotifications',notificationHistory);
-
   const card=document.createElement('div');
   card.className='notification';
   const label=document.createElement('b');
@@ -312,20 +292,15 @@ function addNotification(who,message,appName){
   card.append(label,text);
   card.onclick=()=>{
     $('toast').classList.add('hidden');
-    unlock();
-    openApp(appName);
-    openChat(who,appName);
+    unlock();openApp(appName);openChat(who,appName);
   };
   $('notifications').prepend(card);
   toast(message,who+' · '+appName);
   $('toast').onclick=()=>{
     $('toast').classList.add('hidden');
-    unlock();
-    openApp(appName);
-    openChat(who,appName);
+    unlock();openApp(appName);openChat(who,appName);
   };
 }
-
 function restoreNotifications(){
   notificationHistory.slice(0,5).reverse().forEach(item=>{
     const card=document.createElement('div');
@@ -335,11 +310,7 @@ function restoreNotifications(){
     const text=document.createElement('div');
     text.textContent=item.who+': '+item.message;
     card.append(label,text);
-    card.onclick=()=>{
-      unlock();
-      openApp(item.appName);
-      openChat(item.who,item.appName);
-    };
+    card.onclick=()=>{unlock();openApp(item.appName);openChat(item.who,item.appName)};
     $('notifications').appendChild(card);
   });
 }
@@ -350,190 +321,125 @@ function openApp(name){
   $('dock').classList.add('hidden');
   $('appview').classList.remove('hidden');
   let body='';
-
   if(name==='Messages'||name==='WhatsApp'){
     const people=name==='Messages'
-      ?[['Baby','you up? i miss you.','photo-1524504388940-b1c1722653e1'],
-        ['Jeno','bro where are you','photo-1500648767791-00dcc994a43e'],
-        ['Dreamies Group','Mark sent a meme 💀','photo-1529156069898-49953e39b3ac'],
-        ['Doyoung','deadline tomorrow. dont forget.','photo-1506794778202-cad84cf45f1d']]
-      :[['Baby','abang, jangan lupa makan ya','photo-1524504388940-b1c1722653e1'],
-        ['Dreamies 💤','renjun: group call tonight?','photo-1529156069898-49953e39b3ac']];
-
+      ?[['Baby','you up? i miss you.','photo-1524504388940-b1c1722653e1'],['Jeno','bro where are you','photo-1500648767791-00dcc994a43e'],['Dreamies Group','Mark sent a meme 💀','photo-1529156069898-49953e39b3ac'],['Doyoung','deadline tomorrow. dont forget.','photo-1506794778202-cad84cf45f1d']]
+      :[['Baby','abang, jangan lupa makan ya','photo-1524504388940-b1c1722653e1'],['Dreamies 💤','renjun: group call tonight?','photo-1529156069898-49953e39b3ac']];
     body=shell(name,`<input class="search" placeholder="Search conversations" oninput="filterPeople(this.value)">
-      <div id="peopleList">${people.map(p=>`
-        <button class="person" data-person="${escapeAttr(p[0].toLowerCase())}" onclick="openChat('${p[0]}','${name}')">
-          <img class="avatar" src="${img(p[2],100)}" alt="">
-          <div style="flex:1"><strong>${p[0]}</strong><p>${p[1]}</p></div><span class="sub">›</span>
-        </button>`).join('')}</div>`);
+    <div id="peopleList">${people.map(p=>`<button class="person" data-person="${escapeAttr(p[0].toLowerCase())}" onclick="openChat('${p[0]}','${name}')"><img class="avatar" src="${img(p[2],100)}" alt=""><div style="flex:1"><strong>${p[0]}</strong><p>${p[1]}</p></div><span class="sub">›</span></button>`).join('')}</div>`);
   }else if(name==='Photos'){
-    body=shell(name,`<p class="sub">All Photos · ${photos.length} items</p><div class="photoGrid">
-      ${photos.map((p,i)=>`<img loading="lazy" src="${img(p[1],300)}" alt="${escapeAttr(p[0])}" onclick="viewPhoto(${i})">`).join('')}
-    </div>`);
+    body=shell(name,`<p class="sub">All Photos · ${photos.length} items</p><div class="photoGrid">${photos.map((p,i)=>`<img loading="lazy" src="${img(p[1],300)}" alt="${escapeAttr(p[0])}" onclick="viewPhoto(${i})">`).join('')}</div>`);
   }else if(name==='Notes'){
-    body=shell(name,`<button class="smallbtn" onclick="editNote(-1)">＋ New Note</button>
-      <div style="margin-top:15px">${savedNotes.map((n,i)=>`
-      <button class="note" onclick="editNote(${i})"><b>${escapeHtml(n.title)}</b><small>${escapeHtml(n.body.slice(0,90))}</small></button>`).join('')}</div>`);
+    body=shell(name,`<button class="smallbtn" onclick="editNote(-1)">＋ New Note</button><div style="margin-top:15px">${savedNotes.map((n,i)=>`<button class="note" onclick="editNote(${i})"><b>${escapeHtml(n.title)}</b><small>${escapeHtml(n.body.slice(0,90))}</small></button>`).join('')}</div>`);
   }else if(name==='Passwords'){
-    const passwords=[
-      ['Instagram','gravy.afterhours','lifeOfMePass1'],
-      ['Spotify','gravyremiez','lifeOfMePass2'],
-      ['Campus Portal','gravy.student','lifeOfMePass3'],
-      ['Wi-Fi · Home','babyandgravy','lifeOfMePass4']
-    ];
-    body=shell(name,`<p class="sub">Fictional saved passwords · private</p>
-      ${passwords.map((p,i)=>`<div class="rowitem"><div><b>${p[0]}</b><br><span class="sub">${p[1]}</span><br><span id="${p[2]}" class="sub">••••••••••</span></div><button class="smallbtn" onclick="revealPassword('${p[2]}')">Reveal</button></div>`).join('')}`);
+    const passwords=[['Instagram','gravy.afterhours','lifeOfMePass1'],['Spotify','gravyremiez','lifeOfMePass2'],['Campus Portal','gravy.student','lifeOfMePass3'],['Wi-Fi · Home','babyandgravy','lifeOfMePass4']];
+    body=shell(name,`<p class="sub">Fictional saved passwords · private</p>${passwords.map(p=>`<div class="rowitem"><div><b>${p[0]}</b><br><span class="sub">${p[1]}</span><br><span id="${p[2]}" class="sub">••••••••••</span></div><button class="smallbtn" onclick="revealPassword('${p[2]}')">Reveal</button></div>`).join('')}`);
   }else if(name==='Social'){
-    const posts=[
-      ['photo-1519608487953-e999c86e7455','some nights are better with you.','gravy.afterhours'],
-      ['photo-1509042239860-f550ce710b93','coffee first, feelings later.','gravy.afterhours'],
-      ['photo-1516589178581-6cd7833ae3b2','my favorite person, always. ♡','baby.jpg']
-    ];
-    body=shell(name,`<div class="profile"><img src="${img('photo-1500648767791-00dcc994a43e',200)}" alt="Profile">
-      <h2>gravy.afterhours</h2><p class="sub">27 · IT support · mostly awake at 3 AM</p>
-      <p>8 years, still flirting like day one.</p><button class="smallbtn" onclick="toast('You are viewing your own profile')">Edit profile</button></div>
-      ${posts.map((p,i)=>`<div class="card"><div class="posttop"><img class="avatar" src="${img(p[0],100)}" alt=""><div><b>${p[2]}</b><div class="sub">recently</div></div></div>
-      <img class="postimg" src="${img(p[0],600)}" alt=""><p>${p[1]}</p>
-      <div class="actionrow"><button onclick="likePost(${i},this)">${liked[i]?'♥ Liked':'♡ Like'}</button>
-      <button onclick="commentPost(${i})">◯ Comment</button><button onclick="toast('Post saved')">↗ Share</button></div>
-      <div id="comments${i}"></div></div>`).join('')}
-      <div class="card"><b>Stories</b><div class="actionrow">
-      <button onclick="toast('Baby: miss you already ♡','Story')">◉ Baby</button>
-      <button onclick="toast('Jeno: somebody take his phone away 💀','Story')">◉ Jeno</button>
-      <button onclick="toast('Gravy: late night drive','Story')">◉ Your story</button>
-      </div></div>
-      <button class="smallbtn" onclick="openChat('Baby','Messages')">Open DM with Baby ↗</button>`);
+    const posts=[['photo-1519608487953-e999c86e7455','some nights are better with you.','gravy.afterhours'],['photo-1509042239860-f550ce710b93','coffee first, feelings later.','gravy.afterhours'],['photo-1516589178581-6cd7833ae3b2','my favorite person, always. ♡','baby.jpg']];
+    body=shell(name,`<div class="profile"><img src="${img('photo-1500648767791-00dcc994a43e',200)}" alt="Profile"><h2>gravy.afterhours</h2><p class="sub">27 · IT support · mostly awake at 3 AM</p><p>8 years, still flirting like day one.</p><button class="smallbtn" onclick="toast('You are viewing your own profile')">Edit profile</button></div>
+    ${posts.map((p,i)=>`<div class="card"><div class="posttop"><img class="avatar" src="${img(p[0],100)}" alt=""><div><b>${p[2]}</b><div class="sub">recently</div></div></div><img class="postimg" src="${img(p[0],600)}" alt=""><p>${p[1]}</p><div class="actionrow"><button onclick="likePost(${i},this)">${liked[i]?'♥ Liked':'♡ Like'}</button><button onclick="commentPost(${i})">◯ Comment</button><button onclick="toast('Post saved')">↗ Share</button></div><div id="comments${i}"></div></div>`).join('')}
+    <div class="card"><b>Stories</b><div class="actionrow"><button onclick="toast('Baby: miss you already ♡','Story')">◉ Baby</button><button onclick="toast('Jeno: somebody take his phone away 💀','Story')">◉ Jeno</button><button onclick="toast('Gravy: late night drive','Story')">◉ Your story</button></div></div><button class="smallbtn" onclick="openChat('Baby','Messages')">Open DM with Baby ↗</button>`);
   }else if(name==='Phone'){
-    body=shell(name,`<div class="card"><div class="eyebrow">RECENTS</div>
-      ${[['Baby · FaceTime','Today, 02:41 AM','↗'],['Jeno','Yesterday, 11:12 PM','↙'],['Baby · Mobile','Yesterday, 08:30 PM','↗'],['Doyoung','Monday, 09:05 AM','↙']].map(c=>`
-      <div class="rowitem"><div><b>${c[0]}</b><br><span class="sub">${c[1]}</span></div><span>${c[2]}</span></div>`).join('')}
-      </div><button class="smallbtn" onclick="toast('Calling Baby… (simulation)')">☎ Call Baby</button>
-      <button class="smallbtn" onclick="toast('Incoming call from Baby (simulation)')">↙ Simulate incoming call</button>`);
+    body=shell(name,`<div class="card"><div class="eyebrow">RECENTS</div>${[['Baby · FaceTime','Today, 02:41 AM','↗'],['Jeno','Yesterday, 11:12 PM','↙'],['Baby · Mobile','Yesterday, 08:30 PM','↗'],['Doyoung','Monday, 09:05 AM','↙']].map(c=>`<div class="rowitem"><div><b>${c[0]}</b><br><span class="sub">${c[1]}</span></div><span>${c[2]}</span></div>`).join('')}</div><button class="smallbtn" onclick="toast('Calling Baby… (simulation)')">☎ Call Baby</button> <button class="smallbtn" onclick="toast('Incoming call from Baby (simulation)')">↙ Simulate incoming call</button>`);
   }else if(name==='Calendar'){
-    body=shell(name,`<div class="card"><div class="eyebrow">OCTOBER 2026</div><h2>Wednesday, 21</h2>
-      ${[['10:00 AM · Campus','Class'],['02:00 PM · Office','IT shift'],['08:30 PM · Baby','Call ♡'],['11:00 PM · Home','Deadline']].map(c=>`
-      <div class="rowitem"><span>${c[0]}</span><span>${c[1]}</span></div>`).join('')}</div>`);
+    body=shell(name,`<div class="card"><div class="eyebrow">OCTOBER 2026</div><h2>Wednesday, 21</h2>${[['10:00 AM · Campus','Class'],['02:00 PM · Office','IT shift'],['08:30 PM · Baby','Call ♡'],['11:00 PM · Home','Deadline']].map(c=>`<div class="rowitem"><span>${c[0]}</span><span>${c[1]}</span></div>`).join('')}</div>`);
   }else if(name==='Camera'){
-    body=shell(name,`<div style="height:390px;background:#171717;border-radius:18px;display:grid;place-items:center;text-align:center">
-      <div><div style="font-size:60px">◉</div><p class="sub">Camera simulation</p></div></div>
-      <button class="send" style="display:block;margin:20px auto;width:65px;height:65px" onclick="toast('Photo captured! This is a demo.')">●</button>`);
+    body=shell(name,`<div style="height:390px;background:#171717;border-radius:18px;display:grid;place-items:center;text-align:center"><div><div style="font-size:60px">◉</div><p class="sub">Camera simulation</p></div></div><button class="send" style="display:block;margin:20px auto;width:65px;height:65px" onclick="toast('Photo captured! This is a demo.')">●</button>`);
   }else if(name==='Voice Memos'){
-    body=shell(name,`<div class="card"><div class="eyebrow">RECORDINGS</div>
-      ${[['voice note for Baby','00:18'],['random melody','00:42'],['reminder for tomorrow','00:09']].map(x=>`
-      <div class="rowitem"><span>〰 ${x[0]}</span><button class="smallbtn" onclick="toast('Playing ${x[0]} (simulation)')">▶ ${x[1]}</button></div>`).join('')}
-      </div><button class="smallbtn" onclick="toast('Recording started (simulation)')">● New Recording</button>`);
+    body=shell(name,`<div class="card"><div class="eyebrow">RECORDINGS</div>${[['voice note for Baby','00:18'],['random melody','00:42'],['reminder for tomorrow','00:09']].map(x=>`<div class="rowitem"><span>〰 ${x[0]}</span><button class="smallbtn" onclick="toast('Playing ${x[0]} (simulation)')">▶ ${x[1]}</button></div>`).join('')}</div><button class="smallbtn" onclick="toast('Recording started (simulation)')">● New Recording</button>`);
   }else if(name==='Music'){
-    body=shell(name,`<div class="profile"><img style="width:180px;height:180px;border-radius:15px" src="${img('photo-1511379938547-c1f69419868d',400)}" alt="">
-      <h2>3 AM, AGAIN.</h2><p class="sub">a playlist for us</p></div>
-      ${[['Hope','XXXTENTACION'],['Best Part','Daniel Caesar ft. H.E.R.'],['About You','The 1975'],['Die For You','The Weeknd']].map(x=>`
-      <div class="rowitem"><div><b>${x[0]}</b><br><span class="sub">${x[1]}</span></div><button class="smallbtn" onclick="toast('Music preview is a simulation')">▶</button></div>`).join('')}`);
+    body=shell(name,`<div class="profile"><img style="width:180px;height:180px;border-radius:15px" src="${img('photo-1511379938547-c1f69419868d',400)}" alt=""><h2>3 AM, AGAIN.</h2><p class="sub">a playlist for us</p></div>${[['Hope','XXXTENTACION'],['Best Part','Daniel Caesar ft. H.E.R.'],['About You','The 1975'],['Die For You','The Weeknd']].map(x=>`<div class="rowitem"><div><b>${x[0]}</b><br><span class="sub">${x[1]}</span></div><button class="smallbtn" onclick="toast('Music preview is a simulation')">▶</button></div>`).join('')}`);
   }else{
-    body=shell(name,`<div class="card"><h2>${name}</h2><p class="sub">A little corner of Gravy's phone.</p>
-      <p>This is a demo app in 3:00 AM, Life of me.</p></div>`);
+    body=shell(name,`<div class="card"><h2>${name}</h2><p class="sub">A little corner of Gravy's phone.</p><p>This is a demo app in 3:00 AM, Life of me.</p></div>`);
   }
   $('appview').innerHTML=body;
 }
-
 function filterPeople(query){
   const q=query.toLowerCase();
-  document.querySelectorAll('#peopleList .person').forEach(el=>{
-    el.classList.toggle('hidden',!el.dataset.person.includes(q));
-  });
+  document.querySelectorAll('#peopleList .person').forEach(el=>el.classList.toggle('hidden',!el.dataset.person.includes(q)));
 }
-
 function openChat(who,appName){
-  currentChat=who;
-  currentChatApp=appName;
-  if(!chatData[who])chatData[who]=defaultMessages(who);
-  persist('lifeOfMeChats',chatData);
+  currentChat=who;currentChatApp=appName;
+  if(!chatData[who]){
+    chatData[who]=defaultMessages(who);
+    persist('lifeOfMeChats',chatData);
+  }
   const messages=chatData[who];
-
-  $('appview').innerHTML=`<div class="chatpage">
-    <div class="header"><button class="back" onclick="openApp('${appName}')">‹ Back</button>
-    <h1 style="font-size:19px">${escapeHtml(who)}</h1>
-    <button class="back" onclick="toast('Contact details · simulation')">ⓘ</button></div>
-    <div class="sub" style="text-align:center">Conversation · demo</div>
-    <div class="chatmessages" id="chatmessages">${messages.map(m=>`
-      <div class="bubble ${m.me?'me':''}">${escapeHtml(m.text)}<time>${escapeHtml(m.time||'03:00')}</time></div>`).join('')}
-    </div>
-    <form class="composer" id="composer"><input id="messageinput" placeholder="Message" autocomplete="off" maxlength="1000">
-      <button class="send" type="submit">↑</button></form>
-    </div>`;
-
+  $('appview').innerHTML=`<div class="chatpage"><div class="header"><button class="back" onclick="openApp('${appName}')">‹ Back</button><h1 style="font-size:19px">${escapeHtml(who)}</h1><button class="back" onclick="toast('Contact details · simulation')">ⓘ</button></div><div class="sub" style="text-align:center">Conversation · demo</div><div class="chatmessages" id="chatmessages">${messages.map(m=>`<div class="bubble ${m.me?'me':''}">${escapeHtml(m.text)}<time>${escapeHtml(m.time||'03:00')}</time></div>`).join('')}</div><form class="composer" id="composer"><input id="messageinput" placeholder="Message" autocomplete="off" maxlength="1000"><button class="send" type="submit">↑</button></form></div>`;
   $('composer').addEventListener('submit',sendMessage);
   $('chatmessages').scrollTop=$('chatmessages').scrollHeight;
   $('messageinput').focus({preventScroll:true});
 }
-
 function sendMessage(e){
   e.preventDefault();
   const input=$('messageinput');
   const text=input.value.trim();
   if(!text)return;
-  const who=currentChat;
-  const appName=currentChatApp;
-  if(!chatData[who])chatData[who]=defaultMessages(who);
-
-  chatData[who].push({text,me:true,time:$('clock').textContent});
-  persist('lifeOfMeChats',chatData);
+  const who=currentChat,appName=currentChatApp;
+  const updated={...chatData};
+  if(!updated[who])updated[who]=defaultMessages(who);
+  updated[who]=[...updated[who],{text,me:true,time:$('clock').textContent}];
+  if(!persist('lifeOfMeChats',updated)){
+    toast('Pesan belum tersimpan. Coba buka Chrome biasa.');
+    return;
+  }
+  chatData=updated;
   openChat(who,appName);
-
   setTimeout(()=>{
     const replies=who==='Baby'
       ?['abang 😭','you are so annoying, i swear.','okay abang ♡','miss you. come here.','eight years and you still flirt like this?']
       :['LMAO 😭','bro go to sleep.','wait, tell me more.','not you being dramatic at 3 AM 💀'];
     const reply=replies[Math.floor(Math.random()*replies.length)];
-
-    chatData[who].push({text:reply,me:false,time:$('clock').textContent});
-    persist('lifeOfMeChats',chatData);
-    addNotification(who,reply,appName);
-
-    if(currentChat===who&&!$('appview').classList.contains('hidden')){
-      openChat(who,appName);
+    const next={...chatData};
+    next[who]=[...(next[who]||[]),{text:reply,me:false,time:$('clock').textContent}];
+    if(persist('lifeOfMeChats',next)){
+      chatData=next;
+      addNotification(who,reply,appName);
+      if(currentChat===who&&!$('appview').classList.contains('hidden'))openChat(who,appName);
     }
   },1200);
 }
-
 function editNote(i){
   const n=i<0?{title:'',body:''}:savedNotes[i];
-  $('appview').innerHTML=shell('Notes',`
-    <input class="search" id="notetitle" value="${escapeAttr(n.title)}" placeholder="Title" maxlength="150">
-    <textarea class="editor" id="notebody" placeholder="Start typing..." maxlength="20000">${escapeHtml(n.body)}</textarea>
-    <button class="smallbtn" style="margin-top:12px" onclick="saveNote(${i})">Save Note</button>
-    <button class="smallbtn" onclick="openApp('Notes')">Cancel</button>
-    ${i>=0?`<button class="smallbtn" onclick="deleteNote(${i})">Delete</button>`:''}`);
+  $('appview').innerHTML=shell('Notes',`<input class="search" id="notetitle" value="${escapeAttr(n.title)}" placeholder="Title" maxlength="150"><textarea class="editor" id="notebody" placeholder="Start typing..." maxlength="20000">${escapeHtml(n.body)}</textarea><button class="smallbtn" style="margin-top:12px" onclick="saveNote(${i})">Save Note</button><button class="smallbtn" onclick="openApp('Notes')">Cancel</button>${i>=0?`<button class="smallbtn" onclick="deleteNote(${i})">Delete</button>`:''}`);
 }
 function saveNote(i){
   const title=$('notetitle').value.trim()||'Untitled';
   const body=$('notebody').value;
-  if(i<0)savedNotes.unshift({title,body});
-  else savedNotes[i]={title,body};
-  persist('lifeOfMeNotes',savedNotes);
-  toast('Note saved');
-  openApp('Notes');
+  const updated=savedNotes.map(note=>({...note}));
+  if(i<0)updated.unshift({title,body});
+  else updated[i]={title,body};
+  if(persist('lifeOfMeNotes',updated)){
+    savedNotes=updated;
+    toast('Note saved');
+    openApp('Notes');
+  }
 }
 function deleteNote(i){
   if(!confirm('Delete this note?'))return;
-  savedNotes.splice(i,1);
-  persist('lifeOfMeNotes',savedNotes);
-  openApp('Notes');
+  const updated=savedNotes.filter((_,index)=>index!==i);
+  if(persist('lifeOfMeNotes',updated)){
+    savedNotes=updated;
+    openApp('Notes');
+  }
 }
 function viewPhoto(i){
   const p=photos[i];
-  $('appview').innerHTML=shell('Photo',`
-    <img style="width:100%;max-height:68vh;object-fit:contain;border-radius:10px" src="${img(p[1],900)}" alt="${escapeAttr(p[0])}">
-    <p>${escapeHtml(p[0])}</p><p class="sub">Online photo placeholder</p>
-    <button class="smallbtn" onclick="openApp('Photos')">Back to Gallery</button>`);
+  $('appview').innerHTML=shell('Photo',`<img style="width:100%;max-height:68vh;object-fit:contain;border-radius:10px" src="${img(p[1],900)}" alt="${escapeAttr(p[0])}"><p>${escapeHtml(p[0])}</p><p class="sub">Online photo placeholder</p><button class="smallbtn" onclick="openApp('Photos')">Back to Gallery</button>`);
 }
 function revealPassword(id){
   const el=$(id);
   el.textContent=el.textContent==='••••••••••'?'demo-password':'••••••••••';
 }
 function likePost(i,b){
+  const previous=liked[i];
   liked[i]=!liked[i];
-  persist('lifeOfMeLikes',liked);
-  b.textContent=liked[i]?'♥ Liked':'♡ Like';
-  toast(liked[i]?'Added to likes':'Like removed');
+  if(persist('lifeOfMeLikes',liked)){
+    b.textContent=liked[i]?'♥ Liked':'♡ Like';
+    toast(liked[i]?'Added to likes':'Like removed');
+  }else{
+    liked[i]=previous;
+  }
 }
 function commentPost(i){
   const wrap=$('comments'+i);
