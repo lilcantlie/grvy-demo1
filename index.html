@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravy Remiez - Phone</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for iOS Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="iphone-frame">
-        <!-- Screen Container -->
         <div class="iphone-screen">
             
-            <!-- Dynamic Island & Status Bar -->
+            <!-- Status Bar & Dynamic Island -->
             <div class="status-bar">
                 <span id="status-time">00:00</span>
                 <div class="dynamic-island"></div>
@@ -32,9 +31,8 @@
                     <div id="lock-time">00:00</div>
                 </div>
 
-                <!-- Notifications Center -->
+                <!-- Notifications -->
                 <div class="notifications-container">
-                    <!-- Telegram Notif 1 -->
                     <div class="notification-card">
                         <div class="notif-header">
                             <i class="fa-brands fa-telegram notif-icon"></i>
@@ -45,7 +43,6 @@
                         <div class="notif-body">Abang kamu lembur sayang?</div>
                     </div>
 
-                    <!-- Telegram Notif 2 -->
                     <div class="notification-card">
                         <div class="notif-header">
                             <i class="fa-brands fa-telegram notif-icon"></i>
@@ -56,7 +53,6 @@
                         <div class="notif-body">Maxton: Wkwkwk</div>
                     </div>
 
-                    <!-- Calendar Notif -->
                     <div class="notification-card">
                         <div class="notif-header">
                             <i class="fa-solid fa-calendar-days notif-icon cal-icon"></i>
@@ -68,7 +64,6 @@
                     </div>
                 </div>
 
-                <!-- Bottom Lockscreen Controls -->
                 <div class="lockscreen-footer">
                     <div class="quick-action-btn"><i class="fa-solid fa-flashlight"></i></div>
                     <div class="swipe-hint" id="swipe-up-btn">
@@ -108,23 +103,19 @@
 
             <!-- HOMESCREEN -->
             <div id="homescreen" class="screen">
-                <!-- Widgets Area -->
                 <div class="widgets-row">
-                    <!-- Weather Widget -->
                     <div class="widget weather-widget" onclick="openApp('weather')">
                         <div class="widget-city">Bandung</div>
                         <div class="widget-temp">24°</div>
-                        <div class="widget-condition">Cerah Berawan</div>
+                        <div class="widget-condition">Mostly Sunny</div>
                         <div class="widget-hi-lo">H:28° L:20°</div>
                     </div>
-                    <!-- Notes Widget -->
                     <div class="widget notes-widget" onclick="openApp('notes')">
                         <div class="widget-title"><i class="fa-solid fa-note-sticky"></i> Notes</div>
                         <div class="widget-note-preview">kangen baby</div>
                     </div>
                 </div>
 
-                <!-- Grid Apps -->
                 <div class="app-grid">
                     <div class="app-icon-item" onclick="openApp('instagram')">
                         <div class="icon-box instagram-bg"><i class="fa-brands fa-instagram"></i></div>
@@ -164,7 +155,6 @@
                     </div>
                 </div>
 
-                <!-- Dock Apps -->
                 <div class="dock">
                     <div class="app-icon-item" onclick="openApp('call')">
                         <div class="icon-box call-bg"><i class="fa-solid fa-phone"></i></div>
@@ -183,72 +173,198 @@
 
             <!-- APP MODALS CONTAINER -->
             <div id="app-container" class="app-container">
-                <!-- App Header Bar -->
-                <div class="app-header">
-                    <button class="back-btn" onclick="closeApp()"><i class="fa-solid fa-chevron-left"></i> Kembali</button>
-                    <span id="app-header-title">App</span>
-                </div>
-
-                <!-- 1. Instagram View -->
+                
+                <!-- 1. INSTAGRAM VIEW -->
                 <div id="app-instagram" class="app-content">
-                    <div class="ig-profile">
-                        <div class="ig-top">
-                            <img src="https://pin.it/7st1L0IDt" class="ig-avatar" alt="prajurie" onerror="this.src='https://via.placeholder.com/100/111/fff?text=Prajurie'">
-                            <div class="ig-stats">
-                                <div><strong>3</strong><span>Posts</span></div>
-                                <div><strong>5.000</strong><span>Followers</span></div>
-                                <div><strong>300</strong><span>Following</span></div>
+                    <div class="ig-container">
+                        <div class="ig-nav-bar">
+                            <i class="fa-solid fa-chevron-left back-btn-ig" onclick="closeApp()"></i>
+                            <span class="ig-username-title">prajurie</span>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                        <div class="ig-profile-header">
+                            <div class="ig-avatar-stats">
+                                <div class="ig-avatar-wrapper">
+                                    <img src="https://pin.it/7st1L0IDt" class="ig-avatar" alt="prajurie" onerror="this.src='https://via.placeholder.com/100/333/fff?text=Prajurie'">
+                                </div>
+                                <div class="ig-stats-row">
+                                    <div class="stat-item">
+                                        <strong>3</strong>
+                                        <span>Posts</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <strong>5.000</strong>
+                                        <span>Followers</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <strong>300</strong>
+                                        <span>Following</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ig-bio-section">
+                                <div class="ig-display-name">Gravy Remiez</div>
+                                <div class="ig-handle">@prajurie</div>
+                                <div class="ig-bio-text">CEO, IT Support, Technical Informatics at Harvard</div>
+                            </div>
+
+                            <div class="ig-actions">
+                                <button class="ig-btn primary-btn">Follow</button>
+                                <button class="ig-btn secondary-btn">Message</button>
+                                <button class="ig-btn icon-btn"><i class="fa-solid fa-user-plus"></i></button>
+                            </div>
+
+                            <div class="ig-highlights">
+                                <div class="highlight-item">
+                                    <div class="highlight-ring">
+                                        <img src="https://pin.it/7tPtJjosC" onerror="this.src='https://via.placeholder.com/60/333/fff?text=1'">
+                                    </div>
+                                    <span>🇹🇭</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-ring">
+                                        <img src="https://pin.it/1jvXJYlHq" onerror="this.src='https://via.placeholder.com/60/333/fff?text=2'">
+                                    </div>
+                                    <span>🏛️</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-ring">
+                                        <img src="https://pin.it/4TA49WzvN" onerror="this.src='https://via.placeholder.com/60/333/fff?text=3'">
+                                    </div>
+                                    <span>☕</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="ig-bio">
-                            <div class="ig-name">Gravy Remiez</div>
-                            <p>@prajurie</p>
-                            <p>CEO, IT Support, Technical Informatics at Harvard</p>
+
+                        <div class="ig-tabs">
+                            <div class="tab-item active"><i class="fa-solid fa-table-cells"></i></div>
+                            <div class="tab-item"><i class="fa-solid fa-clapperboard"></i></div>
+                            <div class="tab-item"><i class="fa-regular fa-id-badge"></i></div>
                         </div>
-                    </div>
-                    <div class="ig-feed">
-                        <!-- Post 1 -->
-                        <div class="ig-post">
-                            <div class="ig-post-header"><strong>prajurie</strong></div>
-                            <img src="https://pin.it/7tPtJjosC" class="ig-post-img" onerror="this.src='https://via.placeholder.com/400x400/222/fff?text=Post+1'">
-                            <div class="ig-post-caption"><strong>prajurie</strong> yuh 👺</div>
-                        </div>
-                        <!-- Post 2 -->
-                        <div class="ig-post">
-                            <div class="ig-post-header"><strong>prajurie</strong></div>
-                            <img src="https://pin.it/1jvXJYlHq" class="ig-post-img" onerror="this.src='https://via.placeholder.com/400x400/222/fff?text=Post+2'">
-                            <div class="ig-post-caption"><strong>prajurie</strong> huh abis anuin server</div>
-                        </div>
-                        <!-- Post 3 -->
-                        <div class="ig-post">
-                            <div class="ig-post-header"><strong>prajurie</strong></div>
-                            <img src="https://pin.it/4TA49WzvN" class="ig-post-img" onerror="this.src='https://via.placeholder.com/400x400/222/fff?text=Post+3'">
-                            <div class="ig-post-caption"><strong>prajurie</strong> my sweetness baby @hagiel</div>
+
+                        <div class="ig-grid">
+                            <div class="grid-post" onclick="showIgPostModal('yuh 👺')">
+                                <i class="fa-solid fa-thumbtack pin-icon"></i>
+                                <img src="https://pin.it/7tPtJjosC" onerror="this.src='https://via.placeholder.com/150/222/fff?text=Post+1'">
+                            </div>
+                            <div class="grid-post" onclick="showIgPostModal('huh abis anuin server')">
+                                <i class="fa-solid fa-video media-icon"></i>
+                                <img src="https://pin.it/1jvXJYlHq" onerror="this.src='https://via.placeholder.com/150/222/fff?text=Post+2'">
+                            </div>
+                            <div class="grid-post" onclick="showIgPostModal('my sweetness baby @hagiel')">
+                                <i class="fa-solid fa-layer-group media-icon"></i>
+                                <img src="https://pin.it/4TA49WzvN" onerror="this.src='https://via.placeholder.com/150/222/fff?text=Post+3'">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Photos View -->
+                <!-- 2. PHOTOS VIEW -->
                 <div id="app-photos" class="app-content">
-                    <div class="photos-grid">
-                        <div class="photo-item"><img src="https://pin.it/nYnTxkxk5" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Jan+2026'"><span>Januari 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/5XWlKwSEf" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Feb+2026'"><span>Februari 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/6a2tIY6Et" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Mar+2026'"><span>Maret 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/6xM6yzMPe" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Apr+2026'"><span>April 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/3ABgy0LT6" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Mei+2026'"><span>Mei 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/UdjTj4qvu" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Juni+2026'"><span>Juni 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/3KRjbmfvL" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Juli+2026'"><span>Juli 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/6QUbWD6H6" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Ags+2026'"><span>Agustus 2026</span></div>
-                        <div class="photo-item"><img src="https://pin.it/5mnEacYon" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Sep+1'"><span>September 2026 (1)</span></div>
-                        <div class="photo-item"><img src="https://pin.it/3KZxR9BPj" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Sep+2'"><span>September 2026 (2)</span></div>
-                        <div class="photo-item"><img src="https://pin.it/2KuAwW2cX" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Okt+1'"><span>Oktober 2026 (1)</span></div>
-                        <div class="photo-item"><img src="https://pin.it/3EXlNcFln" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Okt+2'"><span>Oktober 2026 (2)</span></div>
-                        <div class="photo-item"><img src="https://pin.it/6OqLBDlKZ" onerror="this.src='https://via.placeholder.com/200/333/fff?text=Okt+3'"><span>Oktober 2026 (3)</span></div>
+                    <div class="photos-container">
+                        <div class="photos-top-bar">
+                            <button class="photos-back-btn" onclick="closeApp()">
+                                <i class="fa-solid fa-chevron-left"></i> Home
+                            </button>
+                            <span class="photos-select-btn">Select</span>
+                        </div>
+
+                        <div class="photos-header">
+                            <h1 class="photos-title">Library</h1>
+                            <span class="photos-count">48 Photos</span>
+                        </div>
+
+                        <div class="photos-feed">
+                            <div class="photo-section">
+                                <h2 class="section-month">October 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/2KuAwW2cX" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Oct+1'"></div>
+                                    <div class="grid-photo-item"><img src="https://pin.it/3EXlNcFln" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Oct+2'"></div>
+                                    <div class="grid-photo-item"><img src="https://pin.it/6OqLBDlKZ" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Oct+3'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">September 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/5mnEacYon" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Sep+1'"></div>
+                                    <div class="grid-photo-item"><img src="https://pin.it/3KZxR9BPj" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Sep+2'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">August 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/6QUbWD6H6" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Ags+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">July 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/3KRjbmfvL" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Jul+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">June 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/UdjTj4qvu" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Jun+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">May 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/3ABgy0LT6" onerror="this.src='https://via.placeholder.com/150/333/fff?text=May+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">April 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/6xM6yzMPe" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Apr+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">March 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/6a2tIY6Et" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Mar+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">February 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/5XWlKwSEf" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Feb+2026'"></div>
+                                </div>
+                            </div>
+
+                            <div class="photo-section">
+                                <h2 class="section-month">January 2026</h2>
+                                <div class="photos-grid-3col">
+                                    <div class="grid-photo-item"><img src="https://pin.it/nYnTxkxk5" onerror="this.src='https://via.placeholder.com/150/333/fff?text=Jan+2026'"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photos-floating-bar">
+                            <span class="filter-tab">Years</span>
+                            <span class="filter-tab">Months</span>
+                            <span class="filter-tab active">All Photos</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 3. Mail View -->
+                <!-- 3. MAIL VIEW -->
                 <div id="app-mail" class="app-content">
+                    <div class="generic-app-header">
+                        <button class="generic-back-btn" onclick="closeApp()"><i class="fa-solid fa-chevron-left"></i> Home</button>
+                        <h2>Mail</h2>
+                    </div>
                     <div class="mail-list">
                         <div class="mail-item">
                             <div class="mail-sender">Gojek</div>
@@ -268,13 +384,16 @@
                     </div>
                 </div>
 
-                <!-- 4. Calendar View -->
+                <!-- 4. CALENDAR VIEW -->
                 <div id="app-calendar" class="app-content">
+                    <div class="generic-app-header">
+                        <button class="generic-back-btn" onclick="closeApp()"><i class="fa-solid fa-chevron-left"></i> Home</button>
+                        <h2>Calendar</h2>
+                    </div>
                     <div class="calendar-app-ui">
                         <h2 id="calendar-month-year">Oktober 2026</h2>
                         <div class="calendar-grid">
                             <span>Ming</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
-                            <!-- Dynamic days loaded via JS -->
                         </div>
                         <div class="calendar-events">
                             <p><strong>Events:</strong></p>
@@ -283,16 +402,24 @@
                     </div>
                 </div>
 
-                <!-- 5. Clock View -->
+                <!-- 5. CLOCK VIEW -->
                 <div id="app-clock" class="app-content">
+                    <div class="generic-app-header">
+                        <button class="generic-back-btn" onclick="closeApp()"><i class="fa-solid fa-chevron-left"></i> Home</button>
+                        <h2>Clock</h2>
+                    </div>
                     <div class="clock-display">
                         <h1 id="clock-big-time">00:00:00</h1>
                         <p id="clock-big-date">Senin, 1 Januari 2026</p>
                     </div>
                 </div>
 
-                <!-- 6. Notes View -->
+                <!-- 6. NOTES VIEW -->
                 <div id="app-notes" class="app-content">
+                    <div class="generic-app-header">
+                        <button class="generic-back-btn" onclick="closeApp()"><i class="fa-solid fa-chevron-left"></i> Home</button>
+                        <h2>Notes</h2>
+                    </div>
                     <div class="notes-list">
                         <div class="note-card">
                             <h3>Website Code Draft</h3>
@@ -312,161 +439,507 @@
                     </div>
                 </div>
 
-                <!-- 7. Weather View -->
+                <!-- 7. WEATHER VIEW -->
                 <div id="app-weather" class="app-content">
-                    <div class="weather-full">
-                        <h2>Bandung</h2>
-                        <div class="weather-main-temp">24°C</div>
-                        <p>Cerah Berawan</p>
-                        <hr style="border-color: #333; margin: 15px 0;">
-                        <p>Kelembapan: 78% | Angin: 12 km/jam</p>
-                        <p>Prakiraan Hari Ini: 20°C - 28°C</p>
+                    <div class="weather-container">
+                        <div class="weather-top-bar">
+                            <button class="weather-back-btn" onclick="closeApp()">
+                                <i class="fa-solid fa-chevron-left"></i> Home
+                            </button>
+                        </div>
+
+                        <div class="weather-header">
+                            <span class="location-tag">MY LOCATION</span>
+                            <h1 class="city-name">Bandung</h1>
+                            <div class="current-temp">24°</div>
+                            <div class="weather-condition">Mostly Sunny</div>
+                            <div class="temp-hi-lo">H:28° L:20°</div>
+                        </div>
+
+                        <div class="weather-card hourly-card">
+                            <p class="hourly-summary">Mostly sunny conditions expected all afternoon. Wind gusts are up to 3 m/s.</p>
+                            <div class="hourly-list">
+                                <div class="hourly-item">
+                                    <span>Now</span>
+                                    <i class="fa-solid fa-sun"></i>
+                                    <strong>24°</strong>
+                                </div>
+                                <div class="hourly-item">
+                                    <span>10 PM</span>
+                                    <i class="fa-solid fa-moon"></i>
+                                    <strong>22°</strong>
+                                </div>
+                                <div class="hourly-item">
+                                    <span>11 PM</span>
+                                    <i class="fa-solid fa-moon"></i>
+                                    <strong>21°</strong>
+                                </div>
+                                <div class="hourly-item">
+                                    <span>12 AM</span>
+                                    <i class="fa-solid fa-cloud-moon"></i>
+                                    <strong>20°</strong>
+                                </div>
+                                <div class="hourly-item">
+                                    <span>1 AM</span>
+                                    <i class="fa-solid fa-cloud-moon"></i>
+                                    <strong>20°</strong>
+                                </div>
+                                <div class="hourly-item">
+                                    <span>2 AM</span>
+                                    <i class="fa-solid fa-moon"></i>
+                                    <strong>19°</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weather-card forecast-card">
+                            <div class="forecast-title">
+                                <i class="fa-regular fa-calendar"></i> 10-DAY FORECAST
+                            </div>
+                            <div class="forecast-list">
+                                <div class="forecast-item">
+                                    <span class="day-name">Today</span>
+                                    <i class="fa-solid fa-sun weather-ic"></i>
+                                    <span class="low-temp">20°</span>
+                                    <div class="temp-bar-wrapper">
+                                        <div class="temp-bar" style="width: 70%; margin-left: 15%;"></div>
+                                    </div>
+                                    <span class="high-temp">28°</span>
+                                </div>
+                                <div class="forecast-item">
+                                    <span class="day-name">Sun</span>
+                                    <i class="fa-solid fa-cloud-sun weather-ic"></i>
+                                    <span class="low-temp">21°</span>
+                                    <div class="temp-bar-wrapper">
+                                        <div class="temp-bar" style="width: 60%; margin-left: 20%;"></div>
+                                    </div>
+                                    <span class="high-temp">27°</span>
+                                </div>
+                                <div class="forecast-item">
+                                    <span class="day-name">Mon</span>
+                                    <i class="fa-solid fa-cloud weather-ic"></i>
+                                    <span class="low-temp">20°</span>
+                                    <div class="temp-bar-wrapper">
+                                        <div class="temp-bar" style="width: 50%; margin-left: 10%;"></div>
+                                    </div>
+                                    <span class="high-temp">26°</span>
+                                </div>
+                                <div class="forecast-item">
+                                    <span class="day-name">Tue</span>
+                                    <i class="fa-solid fa-sun weather-ic"></i>
+                                    <span class="low-temp">21°</span>
+                                    <div class="temp-bar-wrapper">
+                                        <div class="temp-bar" style="width: 75%; margin-left: 15%;"></div>
+                                    </div>
+                                    <span class="high-temp">29°</span>
+                                </div>
+                                <div class="forecast-item">
+                                    <span class="day-name">Wed</span>
+                                    <i class="fa-solid fa-cloud-showers-heavy weather-ic"></i>
+                                    <span class="low-temp">19°</span>
+                                    <div class="temp-bar-wrapper">
+                                        <div class="temp-bar" style="width: 55%; margin-left: 5%;"></div>
+                                    </div>
+                                    <span class="high-temp">25°</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weather-bottom-bar">
+                            <i class="fa-solid fa-map"></i>
+                            <div class="page-dots">
+                                <span class="dot active"></span>
+                            </div>
+                            <i class="fa-solid fa-list-ul"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 8. Call View -->
+                <!-- 8. CALL VIEW -->
                 <div id="app-call" class="app-content">
-                    <div class="call-log">
-                        <div class="call-item missed">
-                            <div>
-                                <strong class="red-text">Baby (5)</strong>
-                                <span>Panggilan Tak Terjawab</span>
+                    <div class="call-container">
+                        <div class="call-top-header">
+                            <div class="call-header-top-row">
+                                <span class="call-edit-btn" onclick="closeApp()">Home</span>
+                                <div class="call-segment-control">
+                                    <span class="segment-pill active">All</span>
+                                    <span class="segment-pill">Missed</span>
+                                </div>
                             </div>
-                            <span class="call-time">10:45</span>
+                            <h1 class="call-main-title">Recents</h1>
+                            <div class="call-search-box">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search" readonly>
+                            </div>
                         </div>
-                        <div class="call-item">
-                            <div>
-                                <strong>Maxton</strong>
-                                <span>Panggilan Keluar (12m)</span>
+
+                        <div class="call-list-feed">
+                            <div class="call-row-item">
+                                <div class="call-info-left">
+                                    <i class="fa-solid fa-arrow-trend-down red-icon"></i>
+                                    <div class="call-name-group">
+                                        <span class="caller-name red-text">Baby (5)</span>
+                                        <span class="call-type">mobile</span>
+                                    </div>
+                                </div>
+                                <div class="call-info-right">
+                                    <span class="call-timestamp">10:45 AM</span>
+                                    <i class="fa-solid fa-circle-info info-icon"></i>
+                                </div>
                             </div>
-                            <span class="call-time">Kemarin</span>
+
+                            <div class="call-row-item">
+                                <div class="call-info-left">
+                                    <i class="fa-solid fa-arrow-trend-up out-icon"></i>
+                                    <div class="call-name-group">
+                                        <span class="caller-name">Maxton</span>
+                                        <span class="call-type">mobile</span>
+                                    </div>
+                                </div>
+                                <div class="call-info-right">
+                                    <span class="call-timestamp">Yesterday</span>
+                                    <i class="fa-solid fa-circle-info info-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="call-row-item">
+                                <div class="call-info-left">
+                                    <i class="fa-solid fa-arrow-trend-down in-icon"></i>
+                                    <div class="call-name-group">
+                                        <span class="caller-name">Eiser</span>
+                                        <span class="call-type">mobile</span>
+                                    </div>
+                                </div>
+                                <div class="call-info-right">
+                                    <span class="call-timestamp">Yesterday</span>
+                                    <i class="fa-solid fa-circle-info info-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="call-row-item">
+                                <div class="call-info-left">
+                                    <i class="fa-solid fa-arrow-trend-up out-icon"></i>
+                                    <div class="call-name-group">
+                                        <span class="caller-name">Evander</span>
+                                        <span class="call-type">mobile</span>
+                                    </div>
+                                </div>
+                                <div class="call-info-right">
+                                    <span class="call-timestamp">Thursday</span>
+                                    <i class="fa-solid fa-circle-info info-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="call-row-item">
+                                <div class="call-info-left">
+                                    <i class="fa-solid fa-arrow-trend-down red-icon"></i>
+                                    <div class="call-name-group">
+                                        <span class="caller-name red-text">070-****-4821</span>
+                                        <span class="call-type">mobile</span>
+                                    </div>
+                                </div>
+                                <div class="call-info-right">
+                                    <span class="call-timestamp">Friday</span>
+                                    <i class="fa-solid fa-circle-info info-icon"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="call-item">
-                            <div>
-                                <strong>Eiser</strong>
-                                <span>Panggilan Masuk (5m)</span>
+
+                        <div class="call-bottom-nav">
+                            <div class="call-nav-item">
+                                <i class="fa-regular fa-star"></i>
+                                <span>Favorites</span>
                             </div>
-                            <span class="call-time">Kemarin</span>
-                        </div>
-                        <div class="call-item">
-                            <div>
-                                <strong>Evander</strong>
-                                <span>Panggilan Keluar (2m)</span>
+                            <div class="call-nav-item active">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>Recents</span>
                             </div>
-                            <span class="call-time">2 Hari lalu</span>
+                            <div class="call-nav-item">
+                                <i class="fa-regular fa-user"></i>
+                                <span>Contacts</span>
+                            </div>
+                            <div class="call-nav-item">
+                                <i class="fa-solid fa-grip"></i>
+                                <span>Keypad</span>
+                            </div>
+                            <div class="call-nav-item">
+                                <i class="fa-solid fa-voicemail"></i>
+                                <span>Voicemail</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 9. Telegram View -->
+                <!-- 9. TELEGRAM VIEW -->
                 <div id="app-telegram" class="app-content">
-                    <!-- Telegram Chat List Screen -->
-                    <div id="telegram-list-screen">
+                    <div id="telegram-list-screen" class="tg-main-container">
+                        <div class="tg-top-bar">
+                            <i class="fa-solid fa-chevron-left" onclick="closeApp()" style="cursor:pointer; color:#87909b;"></i>
+                            <h1 class="tg-title">Chats</h1>
+                            <div class="tg-search-icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+
+                        <div class="tg-stories-row">
+                            <div class="tg-story-item">
+                                <div class="tg-story-ring my-story">
+                                    <img src="https://pin.it/7st1L0IDt" onerror="this.src='https://via.placeholder.com/60/333/fff?text=Me'">
+                                    <div class="story-plus">+</div>
+                                </div>
+                                <span>My Stories</span>
+                            </div>
+                            <div class="tg-story-item" onclick="openTgChat('baby')">
+                                <div class="tg-story-ring">
+                                    <img src="https://pin.it/7tPtJjosC" onerror="this.src='https://via.placeholder.com/60/333/fff?text=B'">
+                                </div>
+                                <span>Baby</span>
+                            </div>
+                            <div class="tg-story-item" onclick="openTgChat('maxton')">
+                                <div class="tg-story-ring">
+                                    <img src="https://pin.it/1jvXJYlHq" onerror="this.src='https://via.placeholder.com/60/333/fff?text=M'">
+                                </div>
+                                <span>Maxton</span>
+                            </div>
+                            <div class="tg-story-item" onclick="openTgChat('keenan')">
+                                <div class="tg-story-ring">
+                                    <img src="https://pin.it/4TA49WzvN" onerror="this.src='https://via.placeholder.com/60/333/fff?text=K'">
+                                </div>
+                                <span>Keenan</span>
+                            </div>
+                            <div class="tg-story-item" onclick="openTgChat('miyuka')">
+                                <div class="tg-story-ring">
+                                    <img src="https://pin.it/nYnTxkxk5" onerror="this.src='https://via.placeholder.com/60/333/fff?text=Miy'">
+                                </div>
+                                <span>Miyuka</span>
+                            </div>
+                        </div>
+
+                        <div class="tg-tabs-filter">
+                            <span class="tg-tab active">All</span>
+                            <span class="tg-tab">Groups <small>120</small></span>
+                            <span class="tg-tab">Channels <small>3</small></span>
+                            <span class="tg-tab">Bots <small>2</small></span>
+                        </div>
+
                         <div class="telegram-chats">
                             <div class="chat-item" onclick="openTgChat('baby')">
-                                <div class="tg-avatar">B</div>
+                                <div class="tg-avatar-wrapper">
+                                    <div class="tg-avatar bg-pink">B</div>
+                                    <span class="online-dot"></span>
+                                </div>
                                 <div class="tg-info">
-                                    <div class="tg-name">Baby</div>
-                                    <div class="tg-last">i love you so much more cuamikk</div>
+                                    <div class="tg-name-row">
+                                        <span class="tg-name">Baby</span>
+                                        <span class="tg-time">10:45 AM</span>
+                                    </div>
+                                    <div class="tg-last-row">
+                                        <span class="tg-last">i love you so much more cuamikk</span>
+                                        <span class="tg-badge">2</span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="chat-item" onclick="openTgChat('maxton')">
-                                <div class="tg-avatar">M</div>
+                                <div class="tg-avatar bg-blue">M</div>
                                 <div class="tg-info">
-                                    <div class="tg-name">Maxton</div>
-                                    <div class="tg-last">Yang beda cuma agama bub😭</div>
+                                    <div class="tg-name-row">
+                                        <span class="tg-name">Maxton</span>
+                                        <span class="tg-time">Yesterday</span>
+                                    </div>
+                                    <div class="tg-last-row">
+                                        <span class="tg-last">Yang beda cuma agama bub😭</span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="chat-item" onclick="openTgChat('keenan')">
-                                <div class="tg-avatar">K</div>
+                                <div class="tg-avatar bg-purple">K</div>
                                 <div class="tg-info">
-                                    <div class="tg-name">Keenan</div>
-                                    <div class="tg-last">100</div>
+                                    <div class="tg-name-row">
+                                        <span class="tg-name">Keenan</span>
+                                        <span class="tg-time">Yesterday</span>
+                                    </div>
+                                    <div class="tg-last-row">
+                                        <span class="tg-last">100</span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="chat-item" onclick="openTgChat('miyuka')">
-                                <div class="tg-avatar">M</div>
+                                <div class="tg-avatar bg-orange">M</div>
                                 <div class="tg-info">
-                                    <div class="tg-name">Miyuka</div>
-                                    <div class="tg-last">ily abangz ❤️❤️</div>
+                                    <div class="tg-name-row">
+                                        <span class="tg-name">Miyuka</span>
+                                        <span class="tg-time">2 Days</span>
+                                    </div>
+                                    <div class="tg-last-row">
+                                        <span class="tg-last">ily abangz ❤️❤️</span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="chat-item" onclick="openTgChat('kian')">
-                                <div class="tg-avatar">N</div>
+                                <div class="tg-avatar bg-green">N</div>
                                 <div class="tg-info">
-                                    <div class="tg-name">Noona Kian</div>
-                                    <div class="tg-last">Tiada libur itu nun</div>
+                                    <div class="tg-name-row">
+                                        <span class="tg-name">Noona Kian</span>
+                                        <span class="tg-time">3 Days</span>
+                                    </div>
+                                    <div class="tg-last-row">
+                                        <span class="tg-last">Tiada libur itu nun</span>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="chat-item" onclick="openTgChat('akatsudi')">
-                                <div class="tg-avatar group">A</div>
+                                <div class="tg-avatar group bg-indigo">A</div>
                                 <div class="tg-info">
-                                    <div class="tg-name">Akatsudi</div>
-                                    <div class="tg-last">Gravy Remiez: Babi</div>
-                                </div>
-                            </div>
-                            <div class="chat-item">
-                                <div class="tg-avatar">E</div>
-                                <div class="tg-info">
-                                    <div class="tg-name">Eiser</div>
-                                    <div class="tg-last">Pesan terarsip...</div>
-                                </div>
-                            </div>
-                            <div class="chat-item">
-                                <div class="tg-avatar">E</div>
-                                <div class="tg-info">
-                                    <div class="tg-name">Evander</div>
-                                    <div class="tg-last">Pesan terarsip...</div>
+                                    <div class="tg-name-row">
+                                        <span class="tg-name">Akatsudi <i class="fa-solid fa-thumbtack pin-small"></i></span>
+                                        <span class="tg-time">01:25</span>
+                                    </div>
+                                    <div class="tg-last-row">
+                                        <span class="tg-last">Gravy Remiez: Babi</span>
+                                        <span class="tg-badge">5</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="tg-fab">
+                            <i class="fa-solid fa-pen"></i>
+                        </div>
                     </div>
 
-                    <!-- Telegram Chat Detail View -->
+                    <!-- Detail Chat Screen -->
                     <div id="telegram-detail-screen" class="hidden">
                         <div class="tg-chat-header">
-                            <button onclick="closeTgChat()"><i class="fa-solid fa-arrow-left"></i></button>
-                            <span id="tg-chat-title">Chat</span>
+                            <button onclick="closeTgChat()"><i class="fa-solid fa-chevron-left"></i></button>
+                            <div class="tg-chat-header-profile">
+                                <div class="tg-header-avatar" id="tg-header-avatar-letter">B</div>
+                                <div class="tg-header-info">
+                                    <span id="tg-chat-title">Chat</span>
+                                    <span class="tg-header-status">online</span>
+                                </div>
+                            </div>
+                            <div class="tg-header-actions">
+                                <i class="fa-solid fa-phone"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
                         </div>
+                        
                         <div id="tg-chat-messages" class="tg-messages-box"></div>
+
+                        <div class="tg-chat-input-bar">
+                            <i class="fa-solid fa-paperclip"></i>
+                            <input type="text" placeholder="Message" readonly>
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 10. Spotify View -->
+                <!-- 10. SPOTIFY VIEW -->
                 <div id="app-spotify" class="app-content">
-                    <div class="spotify-ui">
-                        <h3>Spotify Player</h3>
-                        <div class="spotify-list">
-                            <div class="track-item" onclick="loadSpotifyTrack('3GdN5n6p34yFMd12WKq8jL')">
-                                <strong>1. Penyangkalan</strong>
-                                <span>Spotify Track</span>
+                    <div class="spotify-container">
+                        <div class="spotify-top-bar">
+                            <button class="spotify-back-btn" onclick="closeApp()">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <span class="spotify-playlist-title">Liked Songs</span>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                        <div class="spotify-content-feed">
+                            <h1 class="spotify-main-heading">Liked Songs</h1>
+                            <p class="spotify-sub-info">5 songs • By Gravy Remiez</p>
+
+                            <div class="spotify-shuffle-btn-container">
+                                <button class="spotify-shuffle-btn">SHUFFLE PLAY</button>
                             </div>
-                            <div class="track-item" onclick="loadSpotifyTrack('2ZRo7axmMPeSVUvDbGkJah')">
-                                <strong>2. Hope</strong>
-                                <span>Spotify Track</span>
-                            </div>
-                            <div class="track-item" onclick="loadSpotifyTrack('1GiP26gz7ODqQ8dxweTPo7')">
-                                <strong>3. My Friends</strong>
-                                <span>Spotify Track</span>
-                            </div>
-                            <div class="track-item" onclick="loadSpotifyTrack('2jlVG4zVT1HEeuZJlfnQt5')">
-                                <strong>4. CRZY</strong>
-                                <span>Spotify Track</span>
-                            </div>
-                            <div class="track-item" onclick="loadSpotifyTrack('4nHJcUtNSUVjXRnjdP29Bk')">
-                                <strong>5. You're Gonna Go Far</strong>
-                                <span>Spotify Track</span>
+
+                            <div class="spotify-track-list">
+                                <div class="spotify-track-item" onclick="loadSpotifyTrack('3GdN5n6p34yFMd12WKq8jL')">
+                                    <div class="track-info-left">
+                                        <div class="track-title green-text">1. Penyangkalan</div>
+                                        <div class="track-artist">Gravy Remiez • Penyangkalan</div>
+                                    </div>
+                                    <div class="track-actions-right">
+                                        <i class="fa-solid fa-heart liked-icon"></i>
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
+
+                                <div class="spotify-track-item" onclick="loadSpotifyTrack('2ZRo7axmMPeSVUvDbGkJah')">
+                                    <div class="track-info-left">
+                                        <div class="track-title">2. Hope</div>
+                                        <div class="track-artist">Spotify Track • Hope</div>
+                                    </div>
+                                    <div class="track-actions-right">
+                                        <i class="fa-solid fa-heart liked-icon"></i>
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
+
+                                <div class="spotify-track-item" onclick="loadSpotifyTrack('1GiP26gz7ODqQ8dxweTPo7')">
+                                    <div class="track-info-left">
+                                        <div class="track-title">3. My Friends</div>
+                                        <div class="track-artist">Spotify Track • My Friends</div>
+                                    </div>
+                                    <div class="track-actions-right">
+                                        <i class="fa-solid fa-heart liked-icon"></i>
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
+
+                                <div class="spotify-track-item" onclick="loadSpotifyTrack('2jlVG4zVT1HEeuZJlfnQt5')">
+                                    <div class="track-info-left">
+                                        <div class="track-title">4. CRZY</div>
+                                        <div class="track-artist">Spotify Track • CRZY</div>
+                                    </div>
+                                    <div class="track-actions-right">
+                                        <i class="fa-solid fa-heart liked-icon"></i>
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
+
+                                <div class="spotify-track-item" onclick="loadSpotifyTrack('4nHJcUtNSUVjXRnjdP29Bk')">
+                                    <div class="track-info-left">
+                                        <div class="track-title">5. You're Gonna Go Far</div>
+                                        <div class="track-artist">Spotify Track • You're Gonna Go Far</div>
+                                    </div>
+                                    <div class="track-actions-right">
+                                        <i class="fa-solid fa-heart liked-icon"></i>
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="spotify-embed-container">
-                            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/3GdN5n6p34yFMd12WKq8jL" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+                        <div class="spotify-mini-player">
+                            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/3GdN5n6p34yFMd12WKq8jL" width="100%" height="60" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+
+                        <div class="spotify-bottom-nav">
+                            <div class="spotify-nav-item">
+                                <i class="fa-solid fa-house"></i>
+                                <span>Home</span>
+                            </div>
+                            <div class="spotify-nav-item">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <span>Search</span>
+                            </div>
+                            <div class="spotify-nav-item active">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Your Library</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-            </div><!-- End App Container -->
+            </div>
 
-            <!-- Global Home Bar -->
+            <!-- Global Home Indicator Bar -->
             <div class="bottom-home-bar" onclick="closeApp()"></div>
         </div>
     </div>
