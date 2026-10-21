@@ -3,119 +3,137 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<meta name="theme-color" content="#080808">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090909">
 <title>3:00 AM, Life of me</title>
 <style>
-:root{--bg:#080808;--panel:#171717;--muted:#929292;--line:#303030;--white:#f5f5f5;--accent:#a7a7a7}
+:root{color-scheme:dark;--bg:#090909;--panel:#191919;--line:#303030;--muted:#999;--text:#f5f5f5;--green:#315b48}
 *{box-sizing:border-box}
-body{margin:0;background:#090909;color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{margin:0;background:#080808;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 button,input,textarea{font:inherit}
-button{cursor:pointer;color:inherit}
-.phone{width:min(100%,430px);height:100dvh;min-height:620px;max-height:920px;margin:auto;background:#050505;position:relative;overflow:hidden}
+button{color:inherit;cursor:pointer}
+.phone{width:min(100%,430px);height:100dvh;min-height:600px;max-height:920px;margin:auto;background:#080808;position:relative;overflow:hidden}
 .screen{height:100%;position:relative;overflow:hidden;background:#101010}
-.wallpaper{position:absolute;inset:0;background:linear-gradient(#0004,#0008),url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85') center/cover}
-.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:104px;height:30px;border-radius:25px;background:#000;z-index:30}
-.status{position:absolute;top:13px;left:24px;right:23px;display:flex;justify-content:space-between;z-index:31;font-size:12px;font-weight:650}
-.status .right{letter-spacing:2px}
-.page{position:absolute;inset:0;overflow-y:auto;padding:55px 17px 95px;scrollbar-width:none}
+.wallpaper{position:absolute;inset:0;background:linear-gradient(#0005,#0008),url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85') center/cover}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:102px;height:29px;border-radius:30px;background:#000;z-index:40}
+.status{position:absolute;top:13px;left:24px;right:23px;display:flex;justify-content:space-between;z-index:41;font-size:12px;font-weight:650;pointer-events:none}
+.page{position:absolute;inset:0;overflow-y:auto;padding:57px 17px 100px;scrollbar-width:none;z-index:2}
 .page::-webkit-scrollbar{display:none}
 .hidden{display:none!important}
-.lock{position:absolute;inset:0;z-index:20;text-align:center}
-.lock .lockdate{margin-top:92px;font-size:15px;color:#eee}
-.lock .locktime{font-size:76px;font-weight:250;letter-spacing:-4px;line-height:1.2}
-.lock .locktitle{font-size:12px;letter-spacing:3px;margin-top:6px}
-.lock .notifications{position:absolute;bottom:115px;left:14px;right:14px;text-align:left}
-.notification{padding:13px 15px;background:#222a;border:1px solid #ffffff25;backdrop-filter:blur(25px);border-radius:17px;margin-top:9px;font-size:13px}
-.notification b{display:block;font-size:12px;margin-bottom:4px}
-.unlockhint{position:absolute;bottom:39px;left:0;right:0;font-size:12px;color:#eee}
-.homebg{background:radial-gradient(ellipse at 50% 15%,#383838,#121212 52%,#050505)}
-.widget{padding:16px;border-radius:22px;background:#242424bd;border:1px solid #ffffff10;margin:12px 0 22px}
+.lock{position:absolute;inset:0;z-index:20;text-align:center;color:white}
+.lockdate{margin-top:92px;font-size:14px}
+.locktime{font-size:76px;font-weight:250;letter-spacing:-4px;line-height:1.2}
+.locktitle{font-size:10px;letter-spacing:3px;margin-top:7px}
+.notifications{position:absolute;bottom:110px;left:13px;right:13px;text-align:left;max-height:40%;overflow:auto}
+.notification{padding:12px 14px;background:#252525bb;border:1px solid #ffffff22;backdrop-filter:blur(25px);border-radius:16px;margin-top:8px;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
+.notification b{display:block;font-size:11px;margin-bottom:4px}
+.unlockhint{position:absolute;bottom:35px;left:0;right:0;font-size:11px;color:#eee}
+.lockpass{position:absolute;inset:0;z-index:25;background:#111;text-align:center;padding-top:105px}
 .eyebrow{font-size:10px;letter-spacing:2px;color:#aaa;text-transform:uppercase}
-.widget h2{font-size:25px;font-weight:500;margin:7px 0}
-.widget p{font-size:12px;color:#ccc;margin:5px 0}
-.appgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 10px;margin-top:22px}
+.dots{font-size:24px;letter-spacing:8px;margin-top:26px}
+.keypad{display:grid;grid-template-columns:repeat(3,66px);gap:13px;justify-content:center;margin-top:28px}
+.keypad button{height:62px;border-radius:50%;border:1px solid #ffffff25;background:#ffffff13;font-size:22px}
+.homebg{background:radial-gradient(ellipse at 50% 10%,#393939,#151515 50%,#080808)}
+.widget{padding:17px;border-radius:22px;background:#252525c9;border:1px solid #ffffff12;margin:12px 0 22px}
+.widget h2{font-size:25px;font-weight:500;margin:9px 0}
+.widget p{font-size:12px;color:#ccc;margin:6px 0;line-height:1.5}
+.appgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 8px;margin-top:23px}
 .appicon{text-align:center;border:0;background:none;padding:0;min-width:0}
-.appicon .glyph{width:54px;height:54px;margin:0 auto 7px;border-radius:15px;background:linear-gradient(145deg,#333,#171717);display:grid;place-items:center;font-size:24px;border:1px solid #ffffff12}
+.glyph{width:53px;height:53px;margin:0 auto 7px;border-radius:15px;background:linear-gradient(145deg,#373737,#181818);display:grid;place-items:center;font-size:23px;border:1px solid #ffffff12}
+.glyph.green{background:#254d3a}.glyph.blue{background:#244765}.glyph.pink{background:#654254}.glyph.orange{background:#6a4c2d}.glyph.red{background:#663333}
 .appicon small{font-size:10px;color:#eee;white-space:nowrap}
-.glyph.green{background:#254f3b}.glyph.blue{background:#244866}.glyph.pink{background:#653e51}.glyph.orange{background:#694c2b}
-.dock{position:absolute;bottom:17px;left:15px;right:15px;display:flex;justify-content:space-around;padding:12px 6px;background:#ffffff18;border:1px solid #ffffff12;backdrop-filter:blur(25px);border-radius:25px;z-index:5}
-.dock button{border:0;background:#222;border-radius:14px;width:48px;height:48px;font-size:23px}
-.header{display:flex;align-items:center;justify-content:space-between;margin:5px 0 19px}
-.header h1{font-size:28px;letter-spacing:-.8px;margin:0;font-weight:650}
-.back,.smallbtn{border:0;background:#292929;padding:9px 13px;border-radius:20px;font-size:12px}
+.dock{position:absolute;bottom:15px;left:14px;right:14px;display:flex;justify-content:space-around;padding:11px 5px;background:#ffffff18;border:1px solid #ffffff12;backdrop-filter:blur(25px);border-radius:24px;z-index:5}
+.dock button{border:0;background:#242424;border-radius:14px;width:47px;height:47px;font-size:22px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:4px 0 19px}
+.header h1{font-size:26px;letter-spacing:-.7px;margin:0;font-weight:650}
+.back,.smallbtn{border:0;background:#2a2a2a;padding:9px 12px;border-radius:20px;font-size:12px;white-space:nowrap}
 .sub{color:var(--muted);font-size:12px}
 .search{width:100%;background:#242424;border:1px solid #333;border-radius:12px;padding:12px;color:white;margin:8px 0 14px;outline:none}
 .card{background:#191919;border:1px solid #292929;border-radius:16px;padding:14px;margin:10px 0}
-.person{display:flex;align-items:center;gap:12px;text-align:left;width:100%;background:transparent;border:0;padding:12px 0;border-bottom:1px solid #292929}
+.person{display:flex;align-items:center;gap:11px;text-align:left;width:100%;background:transparent;border:0;padding:12px 0;border-bottom:1px solid #292929}
 .avatar{width:43px;height:43px;object-fit:cover;border-radius:50%;background:#333;flex-shrink:0}
-.person strong{font-size:14px}.person p{margin:4px 0 0;color:#aaa;font-size:12px}
-.chatpage{display:flex;flex-direction:column;height:calc(100% - 5px)}
+.person strong{font-size:14px}.person p{margin:4px 0 0;color:#aaa;font-size:12px;line-height:1.4}
+.chatpage{display:flex;flex-direction:column;height:calc(100% - 4px)}
 .chatmessages{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:9px;padding:12px 0}
-.bubble{max-width:82%;padding:10px 13px;border-radius:18px;background:#292929;font-size:13px;line-height:1.45;align-self:flex-start;overflow-wrap:anywhere}
-.bubble.me{background:#345d49;align-self:flex-end}
-.bubble time{display:block;font-size:9px;color:#ccc;text-align:right;margin-top:4px}
-.composer{display:flex;gap:7px;padding:10px 0 3px}
+.bubble{max-width:82%;padding:10px 13px;border-radius:18px;background:#292929;font-size:13px;line-height:1.45;align-self:flex-start;overflow-wrap:anywhere;white-space:pre-wrap}
+.bubble.me{background:var(--green);align-self:flex-end}
+.bubble time{display:block;font-size:9px;color:#ddd;text-align:right;margin-top:4px}
+.composer{display:flex;gap:7px;padding:10px 0 4px}
 .composer input{flex:1;min-width:0;border:1px solid #383838;border-radius:22px;padding:12px;background:#242424;color:white;outline:none}
-.send{background:#e8e8e8;color:#111;border:0;border-radius:50%;width:43px;height:43px;font-weight:bold}
+.send{background:#eee;color:#111;border:0;border-radius:50%;width:43px;height:43px;font-weight:bold}
 .photoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-.photoGrid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;background:#222}
+.photoGrid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:5px;background:#222;cursor:pointer}
 .note{width:100%;background:#1e1e1e;border:1px solid #303030;border-radius:13px;padding:14px;text-align:left;margin-bottom:8px}
-.note b{display:block;margin-bottom:6px}.note small{color:#aaa}
-textarea.editor{width:100%;min-height:230px;background:#171717;color:white;border:1px solid #333;border-radius:12px;padding:13px;resize:vertical;line-height:1.5}
-.profile{text-align:center;padding:20px 0}
+.note b{display:block;margin-bottom:6px}.note small{color:#aaa;line-height:1.5}
+.editor{width:100%;min-height:230px;background:#171717;color:white;border:1px solid #333;border-radius:12px;padding:13px;resize:vertical;line-height:1.5}
+.profile{text-align:center;padding:18px 0}
 .profile img{width:90px;height:90px;object-fit:cover;border-radius:50%}
 .postimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;margin-top:10px}
 .posttop{display:flex;align-items:center;gap:10px}
 .posttop .avatar{width:34px;height:34px}
 .actionrow{display:flex;gap:17px;margin-top:12px}
-.actionrow button{background:none;border:0;padding:3px 0}
-.rowitem{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #292929;font-size:13px}
+.actionrow button{background:none;border:0;padding:4px 0;font-size:12px}
+.rowitem{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid #292929;font-size:13px}
 .rowitem span:last-child{color:#aaa}
+.rowitem b{overflow-wrap:anywhere}
 .bigtime{font-size:54px;font-weight:250;text-align:center;margin:30px 0}
-.keypad{display:grid;grid-template-columns:repeat(3,66px);gap:13px;justify-content:center;margin-top:30px}
-.keypad button{height:62px;border-radius:50%;border:1px solid #ffffff25;background:#ffffff13;font-size:23px}
-.dots{font-size:25px;letter-spacing:8px;margin-top:30px}
-.lockpass{position:absolute;inset:0;z-index:25;background:#111;text-align:center;padding-top:110px}
-.toast{position:absolute;z-index:50;top:60px;left:15px;right:15px;padding:13px;background:#333;border-radius:14px;text-align:center;font-size:12px;box-shadow:0 6px 30px #0008}
-.bottomspace{height:12px}
+.toast{position:absolute;z-index:60;top:57px;left:13px;right:13px;padding:13px;background:#292929ed;border:1px solid #ffffff20;border-radius:15px;text-align:left;font-size:12px;line-height:1.5;box-shadow:0 6px 30px #0008;backdrop-filter:blur(20px);overflow-wrap:anywhere}
+.toast strong{display:block;margin-bottom:3px}
 @media(min-width:500px){body{padding:15px 0}.phone{height:min(900px,calc(100dvh - 30px));border:5px solid #292929;border-radius:40px}.screen{border-radius:34px}}
 </style>
 </head>
 <body>
 <div class="phone"><div class="screen" id="screen">
 <div class="wallpaper"></div>
-<div class="status"><span id="clock">03:00</span><span class="right">▮▮▮ ◉</span></div>
+<div class="status"><span id="clock">03:00</span><span>▮▮▮ ◉</span></div>
 <div class="island"></div>
+
 <section class="lock" id="lock">
-<div class="lockdate" id="lockdate">Wednesday, October 21</div>
-<div class="locktime" id="locktime">03:00</div>
-<div class="locktitle">3:00 AM, LIFE OF ME</div>
-<div class="notifications">
-<div class="notification"><b>Messages · now</b>baby: abang, you're still awake?</div>
-<div class="notification"><b>WhatsApp · 2m ago</b>Dreamies 💤 · who is still online 💀</div>
-</div>
-<div class="unlockhint">⌃<br>Swipe up to unlock</div>
+  <div class="lockdate" id="lockdate"></div>
+  <div class="locktime" id="locktime">03:00</div>
+  <div class="locktitle">3:00 AM, LIFE OF ME</div>
+  <div class="notifications" id="notifications">
+    <div class="notification"><b>Messages · now</b>Baby: abang, you're still awake?</div>
+    <div class="notification"><b>WhatsApp · 2m ago</b>Dreamies 💤: who is still online 💀</div>
+  </div>
+  <div class="unlockhint">⌃<br>Swipe up or tap to unlock</div>
 </section>
+
 <section class="lockpass hidden" id="pass">
-<div class="eyebrow">ENTER PASSCODE</div><h2>Enter Passcode</h2>
-<div class="dots" id="dots">○ ○ ○ ○</div>
-<div class="keypad" id="keypad"></div>
-<button class="smallbtn" onclick="showLock()" style="margin-top:24px">Cancel</button>
+  <div class="eyebrow">3:00 AM, LIFE OF ME</div>
+  <h2>Enter Passcode</h2>
+  <div class="dots" id="dots">○ ○ ○ ○</div>
+  <div class="keypad" id="keypad"></div>
+  <button class="smallbtn" onclick="showLock()" style="margin-top:23px">Cancel</button>
 </section>
-<div class="page hidden homebg" id="home">
-<div class="eyebrow">WEDNESDAY · 03:00 AM</div>
-<div class="widget"><div class="eyebrow">LIFE LATELY</div><h2>Still awake, huh?</h2><p>Gravy Remiez · 27</p><p>Master's student. IT support. Professional overthinker.</p><p style="margin-top:12px">♡ 8 years with Baby</p></div>
-<div class="appgrid" id="apps"></div>
-</div>
-<div class="page hidden" id="appview"></div>
+
+<section class="page hidden homebg" id="home">
+  <div class="eyebrow">YOUR WEDNESDAY · AFTER HOURS</div>
+  <div class="widget">
+    <div class="eyebrow">LIFE LATELY</div>
+    <h2>Still awake, huh?</h2>
+    <p>Gravy Remiez · 27</p>
+    <p>Master's student. IT support. Professional overthinker.</p>
+    <p style="margin-top:12px">♡ 8 years with Baby</p>
+  </div>
+  <div class="appgrid" id="apps"></div>
+</section>
+
+<section class="page hidden" id="appview"></section>
+
 <div class="dock hidden" id="dock">
-<button onclick="openApp('Messages')">▣</button><button onclick="openApp('Phone')">☎</button><button onclick="openApp('Photos')">▧</button><button onclick="openApp('Music')">♫</button>
+  <button onclick="openApp('Messages')" aria-label="Messages">▣</button>
+  <button onclick="openApp('Phone')" aria-label="Phone">☎</button>
+  <button onclick="openApp('Photos')" aria-label="Photos">▧</button>
+  <button onclick="openApp('Music')" aria-label="Music">♫</button>
 </div>
 <div id="toast" class="toast hidden"></div>
 </div></div>
+
 <script>
 const $=id=>document.getElementById(id);
+const img=(id,w=500)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+
 const photos=[
 ['Us, somewhere quiet','photo-1516589178581-6cd7833ae3b2'],
 ['Late afternoon','photo-1517841905240-472988babdf9'],
@@ -130,81 +148,408 @@ const photos=[
 ['Sunday drive','photo-1449824913935-59a10b8d2000'],
 ['One more memory','photo-1511988617509-a57c8a288659']
 ];
-const img=(id,w=500)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+
 const apps=[
 ['Messages','▣','blue'],['WhatsApp','◉','green'],['Phone','☎','green'],['Photos','▧','pink'],
 ['Notes','▤','orange'],['Passwords','🔑',''],['Social','◎','pink'],['Calendar','▦','red'],
 ['Camera','◉',''],['Voice Memos','〰','red'],['Music','♫','pink'],['Settings','⚙','']
 ];
-let currentChat='',chatData={},savedNotes=[
-{title:'things i need to remember',body:'buy coffee\nfinish the assignment\ncall Baby when he gets home\nstop pretending i am not sleepy'},
-{title:'unsent message',body:'sometimes i still get butterflies like we just started dating. eight years and you still do that to me. embarrassing, honestly.'},
-{title:'to do',body:'□ submit project\n□ groceries\n□ reply to the group chat\n☑ tell Baby i love him'}
-],liked={},unread=0;
-function timeNow(){let d=new Date();$('clock').textContent=d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});$('locktime').textContent=$('clock').textContent;$('lockdate').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}
-timeNow();setInterval(timeNow,30000);
-let startY=0;
-$('lock').addEventListener('touchstart',e=>startY=e.touches[0].clientY);
-$('lock').addEventListener('touchend',e=>{if(startY-e.changedTouches[0].clientY>45)showPass()});
-$('lock').addEventListener('click',showPass);
-function showPass(){$('lock').classList.add('hidden');$('pass').classList.remove('hidden')}
-function showLock(){$('pass').classList.add('hidden');$('lock').classList.remove('hidden')}
+
+function loadSaved(key,fallback){
+  try{
+    const value=localStorage.getItem(key);
+    return value===null?fallback:JSON.parse(value);
+  }catch(e){return fallback;}
+}
+function persist(key,value){
+  try{localStorage.setItem(key,JSON.stringify(value));return true;}
+  catch(e){toast('Browser tidak dapat menyimpan data.');return false;}
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function escapeAttr(s){return escapeHtml(s);}
+
+let currentChat='';
+let currentChatApp='Messages';
+let chatData=loadSaved('lifeOfMeChats',{});
+let savedNotes=loadSaved('lifeOfMeNotes',[
+  {title:'things i need to remember',body:'buy coffee\nfinish the assignment\ncall Baby when he gets home\nstop pretending i am not sleepy'},
+  {title:'unsent message',body:'sometimes i still get butterflies like we just started dating. eight years and you still do that to me. embarrassing, honestly.'},
+  {title:'to do',body:'□ submit project\n□ groceries\n□ reply to the group chat\n☑ tell Baby i love him'}
+]);
+let notificationHistory=loadSaved('lifeOfMeNotifications',[]);
+let liked=loadSaved('lifeOfMeLikes',{});
 let pin='';
+let notificationTimer=null;
+
+function timeNow(){
+  const d=new Date();
+  $('clock').textContent=d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  $('locktime').textContent=$('clock').textContent;
+  $('lockdate').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+}
+timeNow();
+setInterval(timeNow,30000);
+
+function toast(message,who=''){
+  const banner=$('toast');
+  banner.replaceChildren();
+  const title=document.createElement('strong');
+  title.textContent=who||'3:00 AM, Life of me';
+  const content=document.createElement('div');
+  content.textContent=message;
+  banner.append(title,content);
+  banner.classList.remove('hidden');
+  banner.onclick=null;
+  clearTimeout(notificationTimer);
+  notificationTimer=setTimeout(()=>banner.classList.add('hidden'),3500);
+}
+
+function showPass(){
+  $('lock').classList.add('hidden');
+  $('pass').classList.remove('hidden');
+}
+function showLock(){
+  $('pass').classList.add('hidden');
+  $('lock').classList.remove('hidden');
+  pin='';
+  updateDots();
+}
+let startY=0;
+$('lock').addEventListener('touchstart',e=>{startY=e.touches[0].clientY;},{passive:true});
+$('lock').addEventListener('touchend',e=>{
+  if(startY-e.changedTouches[0].clientY>35)showPass();
+},{passive:true});
+$('lock').addEventListener('click',showPass);
+
+function updateDots(){
+  $('dots').textContent=Array.from({length:4},(_,i)=>i<pin.length?'●':'○').join(' ');
+}
+function unlock(){
+  pin='';
+  updateDots();
+  $('pass').classList.add('hidden');
+  $('lock').classList.add('hidden');
+  $('home').classList.remove('hidden');
+  $('dock').classList.remove('hidden');
+}
+function addKey(n){
+  const b=document.createElement('button');
+  b.textContent=n;
+  b.setAttribute('aria-label',String(n));
+  b.onclick=()=>{
+    if(n==='⌫')pin=pin.slice(0,-1);
+    else if(n!==''&&pin.length<4)pin+=String(n);
+    updateDots();
+    if(pin.length===4){
+      if(pin==='0606')unlock();
+      else{
+        pin='';
+        updateDots();
+        toast('Passcode incorrect. Try again.');
+      }
+    }
+  };
+  $('keypad').appendChild(b);
+}
 for(let n=1;n<=9;n++)addKey(n);
-addKey('');addKey(0);addKey('⌫');
-function addKey(n){let b=document.createElement('button');b.textContent=n;b.onclick=()=>{if(n==='⌫'){pin=pin.slice(0,-1)}else if(n!==''&&pin.length<4){pin+=n} $('dots').textContent=Array.from({length:4},(_,i)=>i<pin.length?'●':'○').join(' ');if(pin.length===4){if(pin==='0606'){pin='';$('pass').classList.add('hidden');$('home').classList.remove('hidden');$('dock').classList.remove('hidden')}else{pin='';toast('Passcode incorrect. Try again.');$('dots').textContent='○ ○ ○ ○'}}};$('keypad').appendChild(b)}
-function toast(s){$('toast').textContent=s;$('toast').classList.remove('hidden');setTimeout(()=>$('toast').classList.add('hidden'),2200)}
-$('apps').innerHTML=apps.map(([n,g,c])=>`<button class="appicon" onclick="openApp('${n}')"><div class="glyph ${c}">${g}</div><small>${n}</small></button>`).join('');
-function shell(title,body){return `<div class="header"><button class="back" onclick="goHome()">‹ Home</button><h1>${title}</h1><span style="width:48px"></span></div>${body}<div class="bottomspace"></div>`}
-function goHome(){$('appview').classList.add('hidden');$('home').classList.remove('hidden');$('dock').classList.remove('hidden')}
-function openApp(name){
-$('home').classList.add('hidden');$('dock').classList.add('hidden');$('appview').classList.remove('hidden');let body='';
-if(name==='Messages'||name==='WhatsApp'){
-let people=name==='Messages'?[['Baby','you up? i miss you.','photo-1524504388940-b1c1722653e1'],['Jeno','bro where are you','photo-1500648767791-00dcc994a43e'],['Dreamies Group','Mark sent a meme 💀','photo-1529156069898-49953e39b3ac'],['Doyoung','deadline tomorrow. dont forget.','photo-1506794778202-cad84cf45f1d']]:[['Baby','abang, jangan lupa makan ya','photo-1524504388940-b1c1722653e1'],['Dreamies 💤','renjun: group call tonight?','photo-1529156069898-49953e39b3ac']];
-body=shell(name,`<input class="search" placeholder="Search"><div>${people.map((p,i)=>`<button class="person" onclick="openChat('${p[0]}','${name}')"><img class="avatar" src="${img(p[2],100)}"><div style="flex:1"><strong>${p[0]}</strong><p>${p[1]}</p></div><span class="sub">›</span></button>`).join('')}</div>`);
-}else if(name==='Photos'){
-body=shell(name,`<p class="sub">All Photos · ${photos.length} items</p><div class="photoGrid">${photos.map((p,i)=>`<img loading="lazy" src="${img(p[1],300)}" alt="${p[0]}" onclick="viewPhoto(${i})">`).join('')}</div>`);
-}else if(name==='Notes'){
-body=shell(name,`<button class="smallbtn" onclick="editNote(-1)">＋ New Note</button><div style="margin-top:15px">${savedNotes.map((n,i)=>`<button class="note" onclick="editNote(${i})"><b>${n.title}</b><small>${n.body.replace(/</g,'&lt;').slice(0,65)}</small></button>`).join('')}</div>`);
-}else if(name==='Passwords'){
-body=shell(name,`<p class="sub">Fictional saved passwords · private</p>${[['Instagram','gravy.afterhours','••••••••••'],['Spotify','gravyremiez','••••••••'],['Campus Portal','gravy.student','••••••••'],['Wi-Fi · Home','babyandgravy','••••••••']].map(x=>`<div class="rowitem"><div><b>${x[0]}</b><br><span class="sub">${x[1]}</span></div><button class="smallbtn" onclick="toast('${x[2]}')">Reveal</button></div>`).join('')}`);
-}else if(name==='Social'){
-body=shell(name,`<div class="profile"><img src="${img('photo-1500648767791-00dcc994a43e',200)}"><h2>gravy.afterhours</h2><p class="sub">27 · IT support · mostly awake at 3 AM</p><p>8 years, still flirting like day one.</p></div>${[['photo-1519608487953-e999c86e7455','some nights are better with you.','gravy.afterhours'],['photo-1509042239860-f550ce710b93','coffee first, feelings later.','gravy.afterhours'],['photo-1516589178581-6cd7833ae3b2','my favorite person, always. ♡','baby.jpg']].map((p,i)=>`<div class="card"><div class="posttop"><img class="avatar" src="${img(p[0],100)}"><div><b>${p[2]}</b><div class="sub">just now</div></div></div><img class="postimg" src="${img(p[0],600)}"><p>${p[1]}</p><div class="actionrow"><button onclick="likePost(${i},this)">♡ Like</button><button onclick="toast('Comments: you two are so embarrassing 😭')">◯ Comment</button><button onclick="toast('Post saved')">↗ Share</button></div></div>`).join('')}`);
-}else if(name==='Phone'){
-body=shell(name,`<div class="card"><div class="eyebrow">RECENTS</div>${[['Baby · FaceTime','Today, 02:41 AM','↗'],['Jeno','Yesterday, 11:12 PM','↙'],['Baby · Mobile','Yesterday, 08:30 PM','↗'],['Doyoung','Monday, 09:05 AM','↙']].map(c=>`<div class="rowitem"><div><b>${c[0]}</b><br><span class="sub">${c[1]}</span></div><span>${c[2]}</span></div>`).join('')}</div><button class="smallbtn" onclick="toast('Calling Baby… (simulation)')">☎ Call Baby</button>`);
-}else if(name==='Calendar'){
-body=shell(name,`<div class="card"><div class="eyebrow">OCTOBER 2026</div><h2>Wednesday, 21</h2><div class="rowitem"><span>10:00 AM · Campus</span><span>Class</span></div><div class="rowitem"><span>02:00 PM · Office</span><span>IT shift</span></div><div class="rowitem"><span>08:30 PM · Baby</span><span>Call ♡</span></div><div class="rowitem"><span>11:00 PM · Home</span><span>Deadline</span></div></div>`);
-}else if(name==='Camera'){
-body=shell(name,`<div style="height:390px;background:#171717;border-radius:18px;display:grid;place-items:center;text-align:center"><div><div style="font-size:60px">◉</div><p class="sub">Camera simulation</p></div></div><button class="send" style="display:block;margin:20px auto;width:65px;height:65px" onclick="toast('Photo captured! (demo)')">●</button>`);
-}else if(name==='Voice Memos'){
-body=shell(name,`<div class="card"><div class="eyebrow">RECORDINGS</div>${[['voice note for Baby','00:18'],['random melody','00:42'],['reminder for tomorrow','00:09']].map(x=>`<div class="rowitem"><span>〰 ${x[0]}</span><button class="smallbtn" onclick="toast('Playing ${x[0]} (simulation)')">▶ ${x[1]}</button></div>`).join('')}</div><button class="smallbtn" onclick="toast('Recording started (simulation)')">● New Recording</button>`);
-}else if(name==='Music'){
-body=shell(name,`<div class="profile"><img style="width:180px;height:180px;border-radius:15px" src="${img('photo-1511379938547-c1f69419868d',400)}"><h2>3 AM, AGAIN.</h2><p class="sub">a playlist for us</p></div>${[['Hope','XXXTENTACION'],['Best Part','Daniel Caesar ft. H.E.R.'],['About You','The 1975'],['Die For You','The Weeknd']].map((x,i)=>`<div class="rowitem"><div><b>${x[0]}</b><br><span class="sub">${x[1]}</span></div><button class="smallbtn" onclick="toast('Playing preview: ${x[0]}')">▶</button></div>`).join('')}`);
-}else{
-body=shell(name,`<div class="card"><h2>${name}</h2><p class="sub">A little corner of Gravy's phone.</p><p>This app is a demo for 3:00 AM, Life of me.</p></div>`);
+addKey('');
+addKey(0);
+addKey('⌫');
+
+$('apps').innerHTML=apps.map(([n,g,c])=>
+  `<button class="appicon" onclick="openApp('${n}')"><div class="glyph ${c}">${g}</div><small>${n}</small></button>`
+).join('');
+
+function shell(title,body){
+  return `<div class="header"><button class="back" onclick="goHome()">‹ Home</button><h1>${title}</h1><span style="width:40px"></span></div>${body}<div style="height:12px"></div>`;
 }
-$('appview').innerHTML=body;
+function goHome(){
+  $('appview').classList.add('hidden');
+  $('home').classList.remove('hidden');
+  $('dock').classList.remove('hidden');
 }
-function openChat(who,app){
-currentChat=who;let messages=chatData[who]||defaultMessages(who);chatData[who]=messages;
-$('appview').innerHTML=`<div class="chatpage"><div class="header"><button class="back" onclick="openApp('${app}')">‹ Back</button><h1 style="font-size:19px">${who}</h1><button class="back" onclick="toast('Contact details')">ⓘ</button></div><div class="sub" style="text-align:center">End-to-end encrypted · demo conversation</div><div class="chatmessages" id="chatmessages">${messages.map(m=>`<div class="bubble ${m.me?'me':''}">${escapeHtml(m.text)}<time>${m.time||'03:00'}</time></div>`).join('')}</div><form class="composer" onsubmit="sendMessage(event,'${app}')"><input id="messageinput" placeholder="iMessage" autocomplete="off"><button class="send">↑</button></form></div>`;
-$('chatmessages').scrollTop=$('chatmessages').scrollHeight;
+function goLock(){
+  $('home').classList.add('hidden');
+  $('appview').classList.add('hidden');
+  $('dock').classList.add('hidden');
+  $('lock').classList.remove('hidden');
 }
+
 function defaultMessages(who){
-if(who==='Baby')return[{text:'abang, are you still awake?',me:false},{text:'obviously. who else is going to annoy you at 3 AM',me:true},{text:'you literally texted me first 😭',me:false},{text:'and you love me for it',me:true},{text:'unfortunately, yes. eight years of this.',me:false}];
-if(who.includes('Dreamies'))return[{text:'who is still awake 💀',me:false},{text:'me. unfortunately.',me:true},{text:'go to SLEEP',me:false}];
-return[{text:'bro are you alive',me:false},{text:'barely. deadline is killing me',me:true},{text:'skill issue honestly',me:false}];
+  if(who==='Baby')return[
+    {text:'abang, are you still awake?',me:false,time:'02:54'},
+    {text:'obviously. who else is going to annoy you at 3 AM',me:true,time:'02:55'},
+    {text:'you literally texted me first 😭',me:false,time:'02:56'},
+    {text:'and you love me for it',me:true,time:'02:57'},
+    {text:'unfortunately, yes. eight years of this.',me:false,time:'02:58'}
+  ];
+  if(who.includes('Dreamies'))return[
+    {text:'who is still awake 💀',me:false,time:'02:40'},
+    {text:'me. unfortunately.',me:true,time:'02:41'},
+    {text:'go to SLEEP',me:false,time:'02:42'}
+  ];
+  return[
+    {text:'bro are you alive',me:false,time:'02:30'},
+    {text:'barely. deadline is killing me',me:true,time:'02:31'},
+    {text:'skill issue honestly',me:false,time:'02:32'}
+  ];
 }
-function sendMessage(e,app){e.preventDefault();let input=$('messageinput'),text=input.value.trim();if(!text)return;chatData[currentChat].push({text,me:true,time:$('clock').textContent});openChat(currentChat,app);setTimeout(()=>{let replies=['LMAO 😭','you are so annoying, i swear.','okay abang ♡','wait, tell me more','not you being dramatic at 3 AM','miss you. come here.'];chatData[currentChat].push({text:replies[Math.floor(Math.random()*replies.length)],me:false,time:$('clock').textContent});if(!$('appview').classList.contains('hidden')&&currentChat){openChat(currentChat,app)}} ,1200)}
+
+function addNotification(who,message,appName){
+  const item={who,message,appName,time:new Date().toISOString()};
+  notificationHistory.unshift(item);
+  notificationHistory=notificationHistory.slice(0,15);
+  persist('lifeOfMeNotifications',notificationHistory);
+
+  const card=document.createElement('div');
+  card.className='notification';
+  const label=document.createElement('b');
+  label.textContent=appName+' · now';
+  const text=document.createElement('div');
+  text.textContent=who+': '+message;
+  card.append(label,text);
+  card.onclick=()=>{
+    $('toast').classList.add('hidden');
+    unlock();
+    openApp(appName);
+    openChat(who,appName);
+  };
+  $('notifications').prepend(card);
+  toast(message,who+' · '+appName);
+  $('toast').onclick=()=>{
+    $('toast').classList.add('hidden');
+    unlock();
+    openApp(appName);
+    openChat(who,appName);
+  };
+}
+
+function restoreNotifications(){
+  notificationHistory.slice(0,5).reverse().forEach(item=>{
+    const card=document.createElement('div');
+    card.className='notification';
+    const label=document.createElement('b');
+    label.textContent=item.appName+' · saved';
+    const text=document.createElement('div');
+    text.textContent=item.who+': '+item.message;
+    card.append(label,text);
+    card.onclick=()=>{
+      unlock();
+      openApp(item.appName);
+      openChat(item.who,item.appName);
+    };
+    $('notifications').appendChild(card);
+  });
+}
+restoreNotifications();
+
+function openApp(name){
+  $('home').classList.add('hidden');
+  $('dock').classList.add('hidden');
+  $('appview').classList.remove('hidden');
+  let body='';
+
+  if(name==='Messages'||name==='WhatsApp'){
+    const people=name==='Messages'
+      ?[['Baby','you up? i miss you.','photo-1524504388940-b1c1722653e1'],
+        ['Jeno','bro where are you','photo-1500648767791-00dcc994a43e'],
+        ['Dreamies Group','Mark sent a meme 💀','photo-1529156069898-49953e39b3ac'],
+        ['Doyoung','deadline tomorrow. dont forget.','photo-1506794778202-cad84cf45f1d']]
+      :[['Baby','abang, jangan lupa makan ya','photo-1524504388940-b1c1722653e1'],
+        ['Dreamies 💤','renjun: group call tonight?','photo-1529156069898-49953e39b3ac']];
+
+    body=shell(name,`<input class="search" placeholder="Search conversations" oninput="filterPeople(this.value)">
+      <div id="peopleList">${people.map(p=>`
+        <button class="person" data-person="${escapeAttr(p[0].toLowerCase())}" onclick="openChat('${p[0]}','${name}')">
+          <img class="avatar" src="${img(p[2],100)}" alt="">
+          <div style="flex:1"><strong>${p[0]}</strong><p>${p[1]}</p></div><span class="sub">›</span>
+        </button>`).join('')}</div>`);
+  }else if(name==='Photos'){
+    body=shell(name,`<p class="sub">All Photos · ${photos.length} items</p><div class="photoGrid">
+      ${photos.map((p,i)=>`<img loading="lazy" src="${img(p[1],300)}" alt="${escapeAttr(p[0])}" onclick="viewPhoto(${i})">`).join('')}
+    </div>`);
+  }else if(name==='Notes'){
+    body=shell(name,`<button class="smallbtn" onclick="editNote(-1)">＋ New Note</button>
+      <div style="margin-top:15px">${savedNotes.map((n,i)=>`
+      <button class="note" onclick="editNote(${i})"><b>${escapeHtml(n.title)}</b><small>${escapeHtml(n.body.slice(0,90))}</small></button>`).join('')}</div>`);
+  }else if(name==='Passwords'){
+    const passwords=[
+      ['Instagram','gravy.afterhours','lifeOfMePass1'],
+      ['Spotify','gravyremiez','lifeOfMePass2'],
+      ['Campus Portal','gravy.student','lifeOfMePass3'],
+      ['Wi-Fi · Home','babyandgravy','lifeOfMePass4']
+    ];
+    body=shell(name,`<p class="sub">Fictional saved passwords · private</p>
+      ${passwords.map((p,i)=>`<div class="rowitem"><div><b>${p[0]}</b><br><span class="sub">${p[1]}</span><br><span id="${p[2]}" class="sub">••••••••••</span></div><button class="smallbtn" onclick="revealPassword('${p[2]}')">Reveal</button></div>`).join('')}`);
+  }else if(name==='Social'){
+    const posts=[
+      ['photo-1519608487953-e999c86e7455','some nights are better with you.','gravy.afterhours'],
+      ['photo-1509042239860-f550ce710b93','coffee first, feelings later.','gravy.afterhours'],
+      ['photo-1516589178581-6cd7833ae3b2','my favorite person, always. ♡','baby.jpg']
+    ];
+    body=shell(name,`<div class="profile"><img src="${img('photo-1500648767791-00dcc994a43e',200)}" alt="Profile">
+      <h2>gravy.afterhours</h2><p class="sub">27 · IT support · mostly awake at 3 AM</p>
+      <p>8 years, still flirting like day one.</p><button class="smallbtn" onclick="toast('You are viewing your own profile')">Edit profile</button></div>
+      ${posts.map((p,i)=>`<div class="card"><div class="posttop"><img class="avatar" src="${img(p[0],100)}" alt=""><div><b>${p[2]}</b><div class="sub">recently</div></div></div>
+      <img class="postimg" src="${img(p[0],600)}" alt=""><p>${p[1]}</p>
+      <div class="actionrow"><button onclick="likePost(${i},this)">${liked[i]?'♥ Liked':'♡ Like'}</button>
+      <button onclick="commentPost(${i})">◯ Comment</button><button onclick="toast('Post saved')">↗ Share</button></div>
+      <div id="comments${i}"></div></div>`).join('')}
+      <div class="card"><b>Stories</b><div class="actionrow">
+      <button onclick="toast('Baby: miss you already ♡','Story')">◉ Baby</button>
+      <button onclick="toast('Jeno: somebody take his phone away 💀','Story')">◉ Jeno</button>
+      <button onclick="toast('Gravy: late night drive','Story')">◉ Your story</button>
+      </div></div>
+      <button class="smallbtn" onclick="openChat('Baby','Messages')">Open DM with Baby ↗</button>`);
+  }else if(name==='Phone'){
+    body=shell(name,`<div class="card"><div class="eyebrow">RECENTS</div>
+      ${[['Baby · FaceTime','Today, 02:41 AM','↗'],['Jeno','Yesterday, 11:12 PM','↙'],['Baby · Mobile','Yesterday, 08:30 PM','↗'],['Doyoung','Monday, 09:05 AM','↙']].map(c=>`
+      <div class="rowitem"><div><b>${c[0]}</b><br><span class="sub">${c[1]}</span></div><span>${c[2]}</span></div>`).join('')}
+      </div><button class="smallbtn" onclick="toast('Calling Baby… (simulation)')">☎ Call Baby</button>
+      <button class="smallbtn" onclick="toast('Incoming call from Baby (simulation)')">↙ Simulate incoming call</button>`);
+  }else if(name==='Calendar'){
+    body=shell(name,`<div class="card"><div class="eyebrow">OCTOBER 2026</div><h2>Wednesday, 21</h2>
+      ${[['10:00 AM · Campus','Class'],['02:00 PM · Office','IT shift'],['08:30 PM · Baby','Call ♡'],['11:00 PM · Home','Deadline']].map(c=>`
+      <div class="rowitem"><span>${c[0]}</span><span>${c[1]}</span></div>`).join('')}</div>`);
+  }else if(name==='Camera'){
+    body=shell(name,`<div style="height:390px;background:#171717;border-radius:18px;display:grid;place-items:center;text-align:center">
+      <div><div style="font-size:60px">◉</div><p class="sub">Camera simulation</p></div></div>
+      <button class="send" style="display:block;margin:20px auto;width:65px;height:65px" onclick="toast('Photo captured! This is a demo.')">●</button>`);
+  }else if(name==='Voice Memos'){
+    body=shell(name,`<div class="card"><div class="eyebrow">RECORDINGS</div>
+      ${[['voice note for Baby','00:18'],['random melody','00:42'],['reminder for tomorrow','00:09']].map(x=>`
+      <div class="rowitem"><span>〰 ${x[0]}</span><button class="smallbtn" onclick="toast('Playing ${x[0]} (simulation)')">▶ ${x[1]}</button></div>`).join('')}
+      </div><button class="smallbtn" onclick="toast('Recording started (simulation)')">● New Recording</button>`);
+  }else if(name==='Music'){
+    body=shell(name,`<div class="profile"><img style="width:180px;height:180px;border-radius:15px" src="${img('photo-1511379938547-c1f69419868d',400)}" alt="">
+      <h2>3 AM, AGAIN.</h2><p class="sub">a playlist for us</p></div>
+      ${[['Hope','XXXTENTACION'],['Best Part','Daniel Caesar ft. H.E.R.'],['About You','The 1975'],['Die For You','The Weeknd']].map(x=>`
+      <div class="rowitem"><div><b>${x[0]}</b><br><span class="sub">${x[1]}</span></div><button class="smallbtn" onclick="toast('Music preview is a simulation')">▶</button></div>`).join('')}`);
+  }else{
+    body=shell(name,`<div class="card"><h2>${name}</h2><p class="sub">A little corner of Gravy's phone.</p>
+      <p>This is a demo app in 3:00 AM, Life of me.</p></div>`);
+  }
+  $('appview').innerHTML=body;
+}
+
+function filterPeople(query){
+  const q=query.toLowerCase();
+  document.querySelectorAll('#peopleList .person').forEach(el=>{
+    el.classList.toggle('hidden',!el.dataset.person.includes(q));
+  });
+}
+
+function openChat(who,appName){
+  currentChat=who;
+  currentChatApp=appName;
+  if(!chatData[who])chatData[who]=defaultMessages(who);
+  persist('lifeOfMeChats',chatData);
+  const messages=chatData[who];
+
+  $('appview').innerHTML=`<div class="chatpage">
+    <div class="header"><button class="back" onclick="openApp('${appName}')">‹ Back</button>
+    <h1 style="font-size:19px">${escapeHtml(who)}</h1>
+    <button class="back" onclick="toast('Contact details · simulation')">ⓘ</button></div>
+    <div class="sub" style="text-align:center">Conversation · demo</div>
+    <div class="chatmessages" id="chatmessages">${messages.map(m=>`
+      <div class="bubble ${m.me?'me':''}">${escapeHtml(m.text)}<time>${escapeHtml(m.time||'03:00')}</time></div>`).join('')}
+    </div>
+    <form class="composer" id="composer"><input id="messageinput" placeholder="Message" autocomplete="off" maxlength="1000">
+      <button class="send" type="submit">↑</button></form>
+    </div>`;
+
+  $('composer').addEventListener('submit',sendMessage);
+  $('chatmessages').scrollTop=$('chatmessages').scrollHeight;
+  $('messageinput').focus({preventScroll:true});
+}
+
+function sendMessage(e){
+  e.preventDefault();
+  const input=$('messageinput');
+  const text=input.value.trim();
+  if(!text)return;
+  const who=currentChat;
+  const appName=currentChatApp;
+  if(!chatData[who])chatData[who]=defaultMessages(who);
+
+  chatData[who].push({text,me:true,time:$('clock').textContent});
+  persist('lifeOfMeChats',chatData);
+  openChat(who,appName);
+
+  setTimeout(()=>{
+    const replies=who==='Baby'
+      ?['abang 😭','you are so annoying, i swear.','okay abang ♡','miss you. come here.','eight years and you still flirt like this?']
+      :['LMAO 😭','bro go to sleep.','wait, tell me more.','not you being dramatic at 3 AM 💀'];
+    const reply=replies[Math.floor(Math.random()*replies.length)];
+
+    chatData[who].push({text:reply,me:false,time:$('clock').textContent});
+    persist('lifeOfMeChats',chatData);
+    addNotification(who,reply,appName);
+
+    if(currentChat===who&&!$('appview').classList.contains('hidden')){
+      openChat(who,appName);
+    }
+  },1200);
+}
+
 function editNote(i){
-let n=i<0?{title:'new note',body:''}:savedNotes[i];
-$('appview').innerHTML=shell('Notes',`<input class="search" id="notetitle" value="${escapeAttr(n.title)}" placeholder="Title"><textarea class="editor" id="notebody" placeholder="Start typing...">${escapeHtml(n.body)}</textarea><button class="smallbtn" style="margin-top:12px" onclick="saveNote(${i})">Save Note</button> <button class="smallbtn" onclick="openApp('Notes')">Cancel</button>`);
+  const n=i<0?{title:'',body:''}:savedNotes[i];
+  $('appview').innerHTML=shell('Notes',`
+    <input class="search" id="notetitle" value="${escapeAttr(n.title)}" placeholder="Title" maxlength="150">
+    <textarea class="editor" id="notebody" placeholder="Start typing..." maxlength="20000">${escapeHtml(n.body)}</textarea>
+    <button class="smallbtn" style="margin-top:12px" onclick="saveNote(${i})">Save Note</button>
+    <button class="smallbtn" onclick="openApp('Notes')">Cancel</button>
+    ${i>=0?`<button class="smallbtn" onclick="deleteNote(${i})">Delete</button>`:''}`);
 }
-function saveNote(i){let title=$('notetitle').value.trim()||'Untitled',body=$('notebody').value;if(i<0)savedNotes.unshift({title,body});else savedNotes[i]={title,body};toast('Note saved');openApp('Notes')}
-function viewPhoto(i){let p=photos[i];$('appview').innerHTML=shell('Photo',`<img style="width:100%;max-height:68vh;object-fit:contain;border-radius:10px" src="${img(p[1],900)}"><p>${p[0]}</p><p class="sub">Photo placeholder · online image</p><button class="smallbtn" onclick="openApp('Photos')">Back to Gallery</button>`)}
-function likePost(i,b){liked[i]=!liked[i];b.textContent=liked[i]?'♥ Liked':'♡ Like';toast(liked[i]?'Added to likes':'Like removed')}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function escapeAttr(s){return escapeHtml(s).replace(/`/g,'&#96;')}
+function saveNote(i){
+  const title=$('notetitle').value.trim()||'Untitled';
+  const body=$('notebody').value;
+  if(i<0)savedNotes.unshift({title,body});
+  else savedNotes[i]={title,body};
+  persist('lifeOfMeNotes',savedNotes);
+  toast('Note saved');
+  openApp('Notes');
+}
+function deleteNote(i){
+  if(!confirm('Delete this note?'))return;
+  savedNotes.splice(i,1);
+  persist('lifeOfMeNotes',savedNotes);
+  openApp('Notes');
+}
+function viewPhoto(i){
+  const p=photos[i];
+  $('appview').innerHTML=shell('Photo',`
+    <img style="width:100%;max-height:68vh;object-fit:contain;border-radius:10px" src="${img(p[1],900)}" alt="${escapeAttr(p[0])}">
+    <p>${escapeHtml(p[0])}</p><p class="sub">Online photo placeholder</p>
+    <button class="smallbtn" onclick="openApp('Photos')">Back to Gallery</button>`);
+}
+function revealPassword(id){
+  const el=$(id);
+  el.textContent=el.textContent==='••••••••••'?'demo-password':'••••••••••';
+}
+function likePost(i,b){
+  liked[i]=!liked[i];
+  persist('lifeOfMeLikes',liked);
+  b.textContent=liked[i]?'♥ Liked':'♡ Like';
+  toast(liked[i]?'Added to likes':'Like removed');
+}
+function commentPost(i){
+  const wrap=$('comments'+i);
+  if(!wrap)return;
+  wrap.innerHTML=`<form class="composer"><input placeholder="Write a comment..." maxlength="300" required><button class="send" type="submit">↑</button></form><div class="sub" style="margin-top:7px">Comments are local demo interactions.</div>`;
+  wrap.querySelector('form').addEventListener('submit',e=>{
+    e.preventDefault();
+    const text=wrap.querySelector('input').value.trim();
+    if(!text)return;
+    const comment=document.createElement('p');
+    comment.className='sub';
+    comment.textContent='gravy.afterhours: '+text;
+    wrap.appendChild(comment);
+    wrap.querySelector('form').remove();
+  });
+}
 </script>
 </body>
 </html>
