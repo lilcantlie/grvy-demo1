@@ -1,203 +1,446 @@
-
-/* WhatsApp redesign */
-.wa-screen {
-  min-height: 100%;
-  padding: 46px 16px 78px;
-  background: #0b141a;
-  color: #e9edef;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    user-select: none;
 }
 
-.wa-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+body {
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
 }
 
-.wa-header h1 {
-  margin: 0;
-  font-size: 27px;
-  font-weight: 700;
+/* iPhone 15 Pro Max Frame Setup */
+.iphone-frame {
+    width: 380px;
+    height: 780px;
+    background: #1c1c1e;
+    border-radius: 50px;
+    padding: 12px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05), inset 0 0 10px rgba(0, 0, 0, 0.8);
+    position: relative;
+    border: 3px solid #3a3a3c;
 }
 
-.wa-header-actions {
-  display: flex;
-  gap: 10px;
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
 }
 
-.wa-header-actions button {
-  width: 36px;
-  height: 36px;
-  border: 0;
-  border-radius: 50%;
-  background: #202c33;
-  color: #e9edef;
-  font-size: 22px;
+/* Status Bar & Dynamic Island */
+.status-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-.wa-search-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 12px;
-  background: #202c33;
-  border-radius: 12px;
-  color: #aebac1;
+.dynamic-island {
+    width: 110px;
+    height: 25px;
+    background-color: #000;
+    border-radius: 20px;
+    margin-top: 5px;
 }
 
-.wa-search-wrap .wa-search {
-  flex: 1;
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-  padding: 12px 0;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  color: #e9edef;
-  font-size: 13px;
+.status-icons i {
+    margin-left: 4px;
 }
 
-.wa-search::placeholder {
-  color: #aebac1;
+/* Screen Management */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
 }
 
-.wa-tabs {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding: 17px 0;
-  scrollbar-width: none;
+.screen.active {
+    display: flex;
 }
 
-.wa-tabs::-webkit-scrollbar {
-  display: none;
+/* LOCKSCREEN */
+#lockscreen {
+    /* Wallpaper Malam Bintang */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+    padding-top: 50px;
+    justify-content: space-between;
 }
 
-.wa-tab {
-  flex-shrink: 0;
-  border: 1px solid #374248;
-  border-radius: 20px;
-  background: transparent;
-  color: #aebac1;
-  padding: 8px 15px;
-  font-size: 12px;
+.lockscreen-header {
+    text-align: center;
 }
 
-.wa-tab.active {
-  background: #103c32;
-  border-color: #103c32;
-  color: #d9fdd3;
+.lock-icon {
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-.wa-section-title {
-  color: #00a884;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin: 2px 0 7px;
+#lock-date {
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.wa-list {
-  margin: 0 -3px;
+#lock-time {
+    font-size: 72px;
+    font-weight: 200;
+    line-height: 1;
 }
 
-.wa-person {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 3px;
-  border: 0;
-  border-bottom: 1px solid #202c33;
-  background: transparent;
-  color: #e9edef;
-  text-align: left;
-  cursor: pointer;
+.notifications-container {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.wa-person[hidden] {
-  display: none;
+.notification-card {
+    background: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.wa-avatar {
-  width: 49px;
-  height: 49px;
-  border-radius: 50%;
-  background: #354955;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  color: #e9edef;
-  font-size: 15px;
-  font-weight: 600;
+.notif-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 4px;
 }
 
-.wa-person-info {
-  flex: 1;
-  min-width: 0;
+.notif-icon {
+    color: #2AABEE;
 }
 
-.wa-person-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 6px;
+.cal-icon {
+    color: #ff3b30;
 }
 
-.wa-person-title strong {
-  font-size: 14px;
-  font-weight: 500;
+.notif-title {
+    font-weight: 600;
+    font-size: 13px;
 }
 
-.wa-time {
-  flex-shrink: 0;
-  color: #8696a0;
-  font-size: 10px;
+.notif-body {
+    font-size: 12px;
+    color: #ddd;
 }
 
-.wa-preview {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: #aebac1;
-  font-size: 12px;
+.lockscreen-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 20px 25px;
 }
 
-.wa-bottom-nav {
-  position: sticky;
-  bottom: -1px;
-  display: flex;
-  justify-content: space-around;
-  gap: 2px;
-  margin: 18px -16px -78px;
-  padding: 12px 4px calc(12px + env(safe-area-inset-bottom));
-  background: #202c33;
+.quick-action-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 
-.wa-nav-item {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  color: #aebac1;
-  font-size: 10px;
+.swipe-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 }
 
-.wa-nav-item span {
-  font-size: 20px;
+.swipe-hint span {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 4px;
 }
 
-.wa-nav-item.active {
-  color: #00a884;
+/* PASSCODE SCREEN */
+#passcode-screen {
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(25px);
+    padding-top: 80px;
+    align-items: center;
 }
 
-@media (max-width: 600px) {
-  .wa-screen {
-    padding-top: 48px;
-  }
+.passcode-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.passcode-dots {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.dot.filled {
+    background-color: #fff;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 260px;
+}
+
+.key {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.key.zero {
+    grid-column: 2;
+}
+
+/* HOMESCREEN */
+#homescreen {
+    background-color: #000;
+    padding: 60px 20px 20px 20px;
+    justify-content: space-between;
+}
+
+.widgets-row {
+    display: flex;
+    gap: 15px;
+}
+
+.widget {
+    flex: 1;
+    height: 130px;
+    background: #1c1c1e;
+    border-radius: 20px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.weather-widget {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.widget-city { font-size: 14px; font-weight: 600; }
+.widget-temp { font-size: 32px; font-weight: 300; }
+.widget-condition { font-size: 11px; margin-top: 5px; }
+.widget-hi-lo { font-size: 10px; opacity: 0.8; }
+
+.widget-title { font-size: 13px; font-weight: 600; color: #e5c158; }
+.widget-note-preview { font-size: 14px; margin-top: 15px; }
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px 10px;
+    margin-top: 20px;
+}
+
+.app-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.app-icon-item span {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.icon-box {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+
+.instagram-bg { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.photos-bg { background: #fff; color: #000; }
+.mail-bg { background: #1a73e8; }
+.calendar-bg { background: #fff; color: #ff3b30; font-weight: bold; font-size: 20px; }
+.clock-bg { background: #000; border: 1px solid #333; }
+.notes-bg { background: #e5c158; color: #000; }
+.weather-bg { background: #4a90e2; }
+.settings-bg { background: #8e8e93; }
+.maps-bg { background: #34c759; }
+.call-bg { background: #34c759; }
+.safari-bg { background: #007aff; }
+.telegram-bg { background: #2AABEE; }
+.spotify-bg { background: #1DB954; }
+
+.dock {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* APP MODALS CONTAINER */
+.app-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+}
+
+.app-container.active {
+    display: flex;
+}
+
+.app-header {
+    height: 70px;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #1c1c1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #2c2c2e;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #0a84ff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.app-content {
+    flex: 1;
+    overflow-y: auto;
+    display: none;
+    padding: 15px;
+}
+
+.app-content.active {
+    display: block;
+}
+
+/* INSTAGRAM SPECIFIC */
+.ig-top { display: flex; align-items: center; gap: 20px; }
+.ig-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; }
+.ig-stats { display: flex; gap: 15px; text-align: center; font-size: 12px; }
+.ig-bio { margin-top: 15px; font-size: 13px; }
+.ig-name { font-weight: bold; }
+.ig-feed { margin-top: 20px; }
+.ig-post { margin-bottom: 25px; }
+.ig-post-header { padding: 8px 0; font-size: 13px; }
+.ig-post-img { width: 100%; border-radius: 8px; max-height: 250px; object-fit: cover; }
+.ig-post-caption { font-size: 12px; margin-top: 5px; }
+
+/* PHOTOS SPECIFIC */
+.photos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.photo-item img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; }
+.photo-item span { font-size: 11px; color: #8e8e93; }
+
+/* MAIL SPECIFIC */
+.mail-item { padding: 12px 0; border-bottom: 1px solid #2c2c2e; }
+.mail-sender { font-weight: bold; font-size: 14px; }
+.mail-subject { font-size: 13px; color: #ddd; }
+.mail-preview { font-size: 11px; color: #777; }
+
+/* CALENDAR & CLOCK SPECIFIC */
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center; margin-top: 15px; font-size: 12px; }
+.calendar-events { margin-top: 20px; }
+.event-tag { background: #ff3b30; padding: 8px; border-radius: 8px; font-size: 12px; margin-top: 8px; }
+.clock-display { text-align: center; margin-top: 100px; }
+
+/* NOTES SPECIFIC */
+.note-card { background: #1c1c1e; padding: 12px; border-radius: 10px; margin-bottom: 10px; }
+.note-card h3 { font-size: 14px; color: #e5c158; }
+.note-date { font-size: 10px; color: #777; margin-bottom: 5px; }
+.note-card p { font-size: 12px; }
+
+/* CALL SPECIFIC */
+.call-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #2c2c2e; font-size: 13px; }
+.red-text { color: #ff3b30; }
+.call-time { color: #777; font-size: 11px; }
+
+/* TELEGRAM SPECIFIC */
+#app-telegram { padding: 0; }
+.chat-item { display: flex; align-items: center; gap: 12px; padding: 12px 15px; border-bottom: 1px solid #1c1c1e; cursor: pointer; }
+.tg-avatar { width: 45px; height: 45px; border-radius: 50%; background: #007aff; display: flex; justify-content: center; align-items: center; font-weight: bold; }
+.tg-avatar.group { background: #5856d6; }
+.tg-info { flex: 1; }
+.tg-name { font-size: 14px; font-weight: 600; }
+.tg-last { font-size: 12px; color: #8e8e93; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px; }
+.tg-chat-header { background: #1c1c1e; padding: 10px 15px; display: flex; align-items: center; gap: 15px; }
+.tg-chat-header button { background: none; border: none; color: #2AABEE; font-size: 16px; }
+.tg-messages-box { padding: 15px; display: flex; flex-direction: column; gap: 10px; height: calc(100% - 50px); overflow-y: auto; background: #0f0f0f; }
+.msg { max-width: 75%; padding: 8px 12px; border-radius: 12px; font-size: 12px; line-height: 1.4; }
+.msg.in { background: #262628; align-self: flex-start; }
+.msg.out { background: #2AABEE; align-self: flex-end; }
+.msg-sender { font-weight: bold; font-size: 10px; color: #e5c158; margin-bottom: 2px; }
+
+/* SPOTIFY SPECIFIC */
+.track-item { padding: 10px; background: #1c1c1e; border-radius: 8px; margin-bottom: 8px; cursor: pointer; }
+.track-item strong { display: block; font-size: 13px; }
+.track-item span { font-size: 10px; color: #1DB954; }
+.spotify-embed-container { margin-top: 15px; }
+
+.hidden { display: none !important; }
+
+/* Bottom Home Bar Indicator */
+.bottom-home-bar {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    z-index: 3000;
+    cursor: pointer;
 }
